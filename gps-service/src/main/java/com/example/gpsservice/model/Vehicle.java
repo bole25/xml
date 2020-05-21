@@ -13,7 +13,9 @@ public class Vehicle {
     private String vehicle_class;
     private Double price;
     private Integer mileage;
-
+    
+    private GPSLocation gpsLocation;
+    
     //Odnosi se na to da li automobil ima ogranicenu kilometrazu koju moze da predje prilikom rentanja
     private Boolean limited_rent_mileage = false;
 
@@ -125,6 +127,14 @@ public class Vehicle {
     public void setChild_seat(Integer child_seat) {
         this.child_seat = child_seat;
     }
+
+	public GPSLocation getGpsLocation() {
+		return gpsLocation;
+	}
+
+	public void setGpsLocation(GPSLocation gpsLocation) {
+		this.gpsLocation = gpsLocation;
+	}
 
 
 }

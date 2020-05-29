@@ -1,4 +1,4 @@
-package com.example.vehicleservice.model;
+package com.example.zuulservice.model;
 
 import java.util.Date;
 

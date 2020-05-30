@@ -1,0 +1,29 @@
+version : '3.5'
+
+services:
+        eureka-server:
+                image: eureka-server
+                hostname:
+                        eureka-server
+                networks:
+                        service-discovery-network:
+                                aliases:
+                                        - eureka-server
+                ports:
+                        - 8761:8761
+        admin-service:
+                image: admin-service-img
+                hostname:
+                        admin-service
+                networks:
+                        service-discovery-network:
+                                 aliases:
+                                         - admin-service
+                ports:
+                        - 8082:8082
+
+
+networks:
+        service-discovery-network:
+                name: service-discovery-network
+                driver: bridge

@@ -66,5 +66,8 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .compact();
 
         response.addHeader("Authorization", "Bearer " + token);
+
+        //TODO delete
+        System.out.println("Usao u successful obradu");
     }
 }

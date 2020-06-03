@@ -1,5 +1,5 @@
 package com.example.loginservice.enumeration;
 
 public enum RoleEnum {
-	CLIENT, COMPANY, ADMINISTRATOR
+	ROLE_CLIENT, ROLE_COMPANY, ROLE_ADMINISTRATOR, ROLE_VEHICLE
 }

@@ -1,28 +1,117 @@
 version : '3.5'
 
 services:
-        eureka-server:
-                image: eureka-server
-                hostname:
-                        eureka-server
+        zuul-gateway-api:
+                build: ./zuul-api-gateway
+                image: zuul-gateway-img
+                container_name: zuulControler
+                hostname: zuul-gateway
                 networks:
                         service-discovery-network:
                                 aliases:
-                                        - eureka-server
+                                        - zuul-gateway
                 ports:
-                        - 8761:8761
+                        - 8079:8079
+        login-service:
+                build: ./login-service
+                image: login-service-img
+                container_name: loginContainer
+                hostname: login-service
+                networks:
+                        service-discovery-network:
+                                aliases:
+                                        - login-service
+
         admin-service:
+                build: ./admin-service
                 image: admin-service-img
+                container_name: adminServiceContainer
                 hostname:
                         admin-service
                 networks:
                         service-discovery-network:
                                  aliases:
                                          - admin-service
-                ports:
-                        - 8082:8082
+        
+        messaging-service:
+                 build: ./messaging-service
+                 image: messaging-service-img
+                 container_name: messagingServiceContainer
+                 hostname: messaging-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - messaging-service
+   
+        gps-service:
+                 build: ./gps-service
+                 image: gps-service-img
+                 container_name: gpsServiceContainer
+                 hostname: gps-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - gps-service
+        
+        register-service:
+                 build: ./register-service
+                 image: register-service-img
+                 container_name: registerServiceContainer
+                 hostname: register-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - register-service
 
+        rent-service:
+                 build: ./rent-service
+                 image: rent-service-img
+                 container_name: rentServiceContainer
+                 hostname: rent-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - rent-service
+        
+        report-service:
+                 build: ./report-service
+                 image: report-service-img
+                 container_name: reportServiceContainer
+                 hostname: report-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - report-service
 
+        request-service:
+                 build: ./request-service
+                 image: request-service-img
+                 container_name: requestServiceContainer
+                 hostname: request-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - request-service
+
+        search-service:
+                 build: ./search-service
+                 image: search-service-img
+                 container_name: searchServiceContainer
+                 hostname: search-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - search-service
+
+        vehicle-service:
+                 build: ./vehicle-service
+                 image: vehicle-service-img
+                 container_name: vehicleServiceContainer
+                 hostname: vehicle-service
+                 networks:
+                         service-discovery-network:
+                                 aliases:
+                                         - vehicle-service
 networks:
         service-discovery-network:
                 name: service-discovery-network

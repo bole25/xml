@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
@@ -21,5 +23,10 @@ public class BrandController {
     @PostMapping("/delete/{name}")
     public ResponseEntity<String> deleteBrand(@PathVariable("name") String name){
         return brandService.deleteBrand(name);
+    }
+
+    @GetMapping("/getall")
+    public ResponseEntity<Set<Brand>> getAll(){
+        return brandService.getAll();
     }
 }

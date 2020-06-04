@@ -35,4 +35,6 @@ public class VehicleDTO {
     private Boolean collision_damage_waiver;
 
     private Integer child_seat;
+
+
 }

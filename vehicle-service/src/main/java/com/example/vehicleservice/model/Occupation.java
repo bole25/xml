@@ -23,4 +23,9 @@ public class Occupation {
     private Date startDate;
     private Date endDate;
 
+    public Occupation(Long parseLong, Date sD, Date eD) {
+        this.user_id = parseLong;
+        this.startDate = sD;
+        this.endDate = eD;
+    }
 }

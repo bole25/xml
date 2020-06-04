@@ -1,5 +1,6 @@
 package com.example.vehicleservice.controller;
 
+import com.example.vehicleservice.dto.VehicleDTO;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.service.CreateVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CreateVehicleController {
     CreateVehicleService createVehicleService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> createVehicle(@RequestBody Vehicle vehicle){
+    public ResponseEntity<String> createVehicle(@RequestBody VehicleDTO vehicle){
         return createVehicleService.createVehicle(vehicle);
     }
 }

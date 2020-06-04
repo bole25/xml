@@ -1,5 +1,6 @@
 package com.example.vehicleservice.dto;
 
+import com.example.vehicleservice.model.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

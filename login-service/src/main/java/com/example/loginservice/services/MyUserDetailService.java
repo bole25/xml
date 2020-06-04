@@ -1,5 +1,7 @@
 package com.example.loginservice.services;
 
+import com.example.loginservice.model.UserCredentials;
+import com.example.loginservice.repository.LoginCredentialsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -18,21 +20,21 @@ public class MyUserDetailService implements UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
+    @Autowired
+    LoginCredentialsRepository credentialsRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if(username.equals("korisnik")){
-            List<GrantedAuthority> authorities = AuthorityUtils
-                    .commaSeparatedStringToAuthorityList("ROLE_USER");
-            return new User(username, encoder.encode("korisniksam"), authorities);
 
-        }else if(username.equals("administrator")){
+        UserCredentials user= credentialsRepository.findByUsername(username);
 
-            List<GrantedAuthority> authorities = AuthorityUtils
-                    .commaSeparatedStringToAuthorityList("ROLE_ADMIN");
-            return new User(username, encoder.encode("adminsam"), authorities);
-
+        if (user == null) {
+            throw new UsernameNotFoundException(username + "not found");
         }
 
-        throw new UsernameNotFoundException(username + "not found");
+        List<GrantedAuthority> authorities = AuthorityUtils
+                .commaSeparatedStringToAuthorityList(user.getRole().name());
+        return new User(username, encoder.encode(user.getPassword()), authorities);
+
     }
 }

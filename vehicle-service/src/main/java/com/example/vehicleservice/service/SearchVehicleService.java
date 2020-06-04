@@ -1,18 +1,19 @@
 package com.example.vehicleservice.service;
 
-import com.example.vehicleservice.dto.SearchDTO;
-import com.example.vehicleservice.model.Occupation;
-import com.example.vehicleservice.model.Vehicle;
-import com.example.vehicleservice.repository.VehicleRepository;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import com.example.vehicleservice.dto.SearchDTO;
+import com.example.vehicleservice.model.Occupation;
+import com.example.vehicleservice.model.Vehicle;
+import com.example.vehicleservice.repository.VehicleRepository;
 
 @Service
 public class SearchVehicleService {

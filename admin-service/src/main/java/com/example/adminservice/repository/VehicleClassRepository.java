@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VehicleClassRepository extends JpaRepository<VehicleClass, Long> {
+    void deleteByName(String name);
 }

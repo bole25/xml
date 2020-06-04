@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VehicleDTO {
+
     private String brand;
     private String model;
     private String fuel_type;

@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class FuelTypeService {
 
@@ -26,4 +28,17 @@ public class FuelTypeService {
         }
 
     }
+
+    @Transactional
+    public ResponseEntity<String> deleteFuelType(String name){
+        try {
+            fuelTypeRepository.deleteByName(name);
+            return new ResponseEntity<>("fueltype deleted", HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }

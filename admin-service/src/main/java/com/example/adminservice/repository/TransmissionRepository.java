@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransmissionRepository extends JpaRepository<Transmission, Long> {
+
+    void deleteByName(String name);
 }

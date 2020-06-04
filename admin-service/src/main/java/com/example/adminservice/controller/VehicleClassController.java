@@ -6,10 +6,7 @@ import com.example.adminservice.service.FuelTypeService;
 import com.example.adminservice.service.VehicleClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/vehicleclass")
@@ -20,5 +17,10 @@ public class VehicleClassController {
     @PostMapping("/create")
     public ResponseEntity<String> createVehicleClass(@RequestBody VehicleClass vc){
         return vehicleClassService.createVehicleClass(vc);
+    }
+
+    @PostMapping("/delete/{name}")
+    public ResponseEntity<String> deleteVehicleClass(@PathVariable("name") String name){
+        return vehicleClassService.deleteVehicleClass(name);
     }
 }

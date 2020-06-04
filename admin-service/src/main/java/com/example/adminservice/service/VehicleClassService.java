@@ -1,6 +1,7 @@
 package com.example.adminservice.service;
 
 import com.example.adminservice.model.Brand;
+import com.example.adminservice.model.Transmission;
 import com.example.adminservice.model.VehicleClass;
 import com.example.adminservice.repository.BrandRepository;
 import com.example.adminservice.repository.VehicleClassRepository;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Set;
 
 @Service
 public class VehicleClassService {
@@ -38,6 +40,18 @@ public class VehicleClassService {
         catch (Exception e){
             e.printStackTrace();
             return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @Transactional
+    public ResponseEntity<Set<VehicleClass>> getAll() {
+        try {
+            Set<VehicleClass> ret = vehicleClassRepository.getAll();
+            return new ResponseEntity<>(ret, HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 }

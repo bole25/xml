@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Set;
 
 @Service
 public class FuelTypeService {
@@ -38,6 +39,18 @@ public class FuelTypeService {
         catch (Exception e){
             e.printStackTrace();
             return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @Transactional
+    public ResponseEntity<Set<FuelType>> getAll(){
+        try {
+            Set<FuelType> ret = fuelTypeRepository.getAll();
+            return new ResponseEntity<>(ret, HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 

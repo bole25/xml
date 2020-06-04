@@ -30,4 +30,13 @@ public class Brand {
         this.name = name;
         this.models = new HashSet<>();
     }
+
+    public void removeModel(String name){
+        for(Model m : this.models){
+            if(m.getName().equals(name)){
+                this.models.remove(m);
+                return;
+            }
+        }
+    }
 }

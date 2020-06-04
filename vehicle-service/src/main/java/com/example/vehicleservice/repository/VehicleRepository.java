@@ -15,4 +15,7 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
             "and end_date and  ?2 between start_date " +
             "and end_date ", nativeQuery = true)
     Set<Vehicle> searchVehicle(Date start, Date end);
+
+    @Query(value = "select * from vehicle", nativeQuery = true)
+    Set<Vehicle> showVehicles();
 }

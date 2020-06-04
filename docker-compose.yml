@@ -1,6 +1,19 @@
 version : '3.5'
 
 services:
+        database:
+                image: mysql
+                container_name: mysqlDatabase
+                hostname: mysql-database
+                networks:
+                        service-discovery-network:
+                                aliases:
+                                        - database
+                environment:
+                        MYSQL_ROOT_PASSWORD: password
+                        MYSQL_DATABASE: vehicles
+                volumes:
+                        - mysqldatabase:/var/lib/mysql
         zuul-gateway-api:
                 build: ./zuul-api-gateway
                 image: zuul-gateway-img
@@ -12,15 +25,25 @@ services:
                                         - zuul-gateway
                 ports:
                         - 8079:8079
+                volumes:
+                        - $HOME/.m2:/root/.m2
+
         login-service:
                 build: ./login-service
                 image: login-service-img
                 container_name: loginContainer
                 hostname: login-service
+                environment:
+                        DATABASE_PASSWORD: password
+                        DATABASE_DOMAIN: database
                 networks:
                         service-discovery-network:
                                 aliases:
                                         - login-service
+                volumes:
+                        - $HOME/.m2:/root/.m2
+                depends_on:
+                        - database
 
         admin-service:
                 build: ./admin-service
@@ -32,7 +55,9 @@ services:
                         service-discovery-network:
                                  aliases:
                                          - admin-service
-        
+                volumes:
+                        - $HOME/.m2:/root/.m2
+       
         messaging-service:
                  build: ./messaging-service
                  image: messaging-service-img
@@ -42,7 +67,9 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - messaging-service
-   
+                 volumes:
+                        - $HOME/.m2:/root/.m2
+ 
         gps-service:
                  build: ./gps-service
                  image: gps-service-img
@@ -52,7 +79,9 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - gps-service
-        
+                 volumes:
+                        - $HOME/.m2:/root/.m2
+       
         register-service:
                  build: ./register-service
                  image: register-service-img
@@ -62,6 +91,8 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - register-service
+                 volumes:
+                        - $HOME/.m2:/root/.m2
 
         rent-service:
                  build: ./rent-service
@@ -72,7 +103,9 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - rent-service
-        
+                 volumes:
+                        - $HOME/.m2:/root/.m2
+       
         report-service:
                  build: ./report-service
                  image: report-service-img
@@ -82,6 +115,8 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - report-service
+                 volumes:
+                        - $HOME/.m2:/root/.m2
 
         request-service:
                  build: ./request-service
@@ -92,6 +127,8 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - request-service
+                 volumes:
+                        - $HOME/.m2:/root/.m2
 
         search-service:
                  build: ./search-service
@@ -102,17 +139,30 @@ services:
                          service-discovery-network:
                                  aliases:
                                          - search-service
+                 volumes:
+                        - $HOME/.m2:/root/.m2
 
         vehicle-service:
                  build: ./vehicle-service
                  image: vehicle-service-img
                  container_name: vehicleServiceContainer
                  hostname: vehicle-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - vehicle-service
+                 volumes:
+                        - $HOME/.m2:/root/.m2
+                 depends_on:
+                         - database
+
 networks:
         service-discovery-network:
                 name: service-discovery-network
                 driver: bridge
+
+volumes:
+        mysqldatabase:

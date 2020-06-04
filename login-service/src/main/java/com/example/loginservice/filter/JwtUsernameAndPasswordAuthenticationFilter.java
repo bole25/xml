@@ -4,7 +4,9 @@ import com.example.loginservice.model.UserCredentials;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -37,17 +39,16 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
             throws AuthenticationException {
 
         try{
-
             UserCredentials credentials = new ObjectMapper().readValue(request.getInputStream(), UserCredentials.class);
-
             UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                     credentials.getUsername(), credentials.getPassword(), Collections.emptyList()
             );
-
             return authManager.authenticate(authToken);
 
         }catch (Exception e){
-            throw new RuntimeException(e);
+            response.setStatus(406);
+            response.addHeader("Authorization", "Wrong credentials");
+            throw new BadCredentialsException("Bad credentials");
         }
     }
 
@@ -66,8 +67,5 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .compact();
 
         response.addHeader("Authorization", "Bearer " + token);
-
-        //TODO delete
-        System.out.println("Usao u successful obradu");
     }
 }

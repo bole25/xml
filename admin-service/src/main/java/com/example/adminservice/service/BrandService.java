@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class BrandService {
 
@@ -23,5 +25,18 @@ public class BrandService {
             return new ResponseEntity<>("failed", HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @Transactional
+    public ResponseEntity<String> deleteBrand(String name){
+       try {
+           Brand b = brandRepository.findBrand(name);
+           brandRepository.delete(b);
+           return new ResponseEntity<>("brand deleted", HttpStatus.OK);
+       }
+       catch (Exception e){
+           e.printStackTrace();
+           return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+       }
     }
 }

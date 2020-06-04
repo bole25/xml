@@ -6,10 +6,7 @@ import com.example.adminservice.service.FuelTypeService;
 import com.example.adminservice.service.TransmissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/transmission")
@@ -21,5 +18,10 @@ public class TransmissionController {
     @PostMapping("/create")
     public ResponseEntity<String> createTransmission(@RequestBody Transmission transmission){
         return transmissionService.createTransmission(transmission);
+    }
+
+    @PostMapping("/delete/{name}")
+    public ResponseEntity<String> deleteTransmission(@PathVariable("name") String name){
+        return transmissionService.deleteTransmission(name);
     }
 }

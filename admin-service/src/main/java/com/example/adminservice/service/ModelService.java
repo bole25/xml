@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class ModelService {
 
@@ -26,6 +28,21 @@ public class ModelService {
             brandRepository.save(br);
             return new ResponseEntity<>("Model created", HttpStatus.OK);
 
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @Transactional
+    public ResponseEntity<String> deleteModel(String name){
+        try {
+            Brand b = brandRepository.findBrandForModelDelete(name);
+            b.removeModel(name);
+            brandRepository.save(b);
+            modelRepository.deleteByName(name);
+            return new ResponseEntity<>("model deleted", HttpStatus.OK);
         }
         catch (Exception e){
             e.printStackTrace();

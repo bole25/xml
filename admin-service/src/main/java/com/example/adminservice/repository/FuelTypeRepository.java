@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FuelTypeRepository extends JpaRepository<FuelType, Long> {
+    void deleteByName(String name);
 }

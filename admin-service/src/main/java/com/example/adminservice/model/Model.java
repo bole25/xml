@@ -24,4 +24,6 @@ public class Model {
     public Model(String name) {
         this.name = name;
     }
+
+
 }

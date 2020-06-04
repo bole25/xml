@@ -1,11 +1,14 @@
 package com.example.vehicleservice.model;
 
+import com.example.vehicleservice.dto.VehicleDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -49,4 +52,24 @@ public class Vehicle {
     private Set<Occupation> occupations;
 
 
+    public Vehicle(VehicleDTO vehicleDTO) throws ParseException {
+        this.allowed_mileage = vehicleDTO.getAllowed_mileage();
+        this.brand = vehicleDTO.getBrand();
+        this.child_seat = vehicleDTO.getChild_seat();
+        this.limited_rent_mileage = vehicleDTO.getLimited_rent_mileage();
+        this.occupations = new HashSet<>();
+        this.collision_damage_waiver = vehicleDTO.getCollision_damage_waiver();
+        this.fuel_type = vehicleDTO.getFuel_type();
+        this.mileage = vehicleDTO.getMileage();
+        this.model = vehicleDTO.getModel();
+        this.price = vehicleDTO.getPrice();
+        this.transmission = vehicleDTO.getTransmission();
+        this.vehicle_class = vehicleDTO.getVehicle_class();
+
+        SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
+        Date startDate = formatter1.parse(vehicleDTO.getStartDate());
+        Date endDate = formatter1.parse(vehicleDTO.getEndDate());
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 }

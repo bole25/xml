@@ -36,6 +36,7 @@ services:
                 environment:
                         DATABASE_PASSWORD: password
                         DATABASE_DOMAIN: database
+                        DATABASE_SCHEME: authentication
                 networks:
                         service-discovery-network:
                                 aliases:
@@ -51,6 +52,10 @@ services:
                 container_name: adminServiceContainer
                 hostname:
                         admin-service
+                environment:
+                        DATABASE_PASSWORD: password
+                        DATABASE_DOMAIN: database
+                        DATABASE_SCHEME: admindb
                 networks:
                         service-discovery-network:
                                  aliases:
@@ -150,6 +155,7 @@ services:
                  environment:
                          DATABASE_PASSWORD: password
                          DATABASE_DOMAIN: database
+                         DATABASE_SCHEMA: vehicles
                  networks:
                          service-discovery-network:
                                  aliases:

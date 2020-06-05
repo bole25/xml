@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class ShowVehicleDTO {
     private String model;
     private String brand;
@@ -21,7 +20,7 @@ public class ShowVehicleDTO {
     	brand = v.getBrand();
     	price = v.getPrice();
     }
-    
+
 	public ShowVehicleDTO(String model2, String brand2, Double price2) {
 		this.model = model2;
 		this.brand = brand;

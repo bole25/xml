@@ -7,6 +7,6 @@ RUN ["mvn", "package", "-DskipTests"]
 
 FROM openjdk:8-jdk-alpine
 WORKDIR /app
-COPY --from=mavenService /usr/src/server/target/rent-service.jar ./
+COPY --from=mavenService /usr/src/server/target/cart-service.jar ./
 EXPOSE 8087
-ENTRYPOINT ["java", "-jar", "rent-service.jar"]
+ENTRYPOINT ["java", "-jar", "cart-service.jar"]

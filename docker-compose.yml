@@ -99,15 +99,15 @@ services:
                  volumes:
                         - $HOME/.m2:/root/.m2
 
-        rent-service:
-                 build: ./rent-service
-                 image: rent-service-img
-                 container_name: rentServiceContainer
-                 hostname: rent-service
+        cart-service:
+                 build: ./cart-service
+                 image: cart-service-img
+                 container_name: cartServiceContainer
+                 hostname: cart-service
                  networks:
                          service-discovery-network:
                                  aliases:
-                                         - rent-service
+                                         - cart-service
                  volumes:
                         - $HOME/.m2:/root/.m2
        

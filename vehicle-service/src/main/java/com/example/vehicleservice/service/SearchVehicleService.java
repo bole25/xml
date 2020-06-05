@@ -25,9 +25,9 @@ public class SearchVehicleService {
         Set<Vehicle> retVehicles = new HashSet<>();
 
         try {
-            SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
-            Date startDate = formatter1.parse(searchDTO.getStartDate());
-            Date endDate = formatter1.parse(searchDTO.getEndDate());
+            //SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
+            Date startDate = searchDTO.getStartDate();
+            Date endDate = searchDTO.getEndDate();
             if(startDate.after(endDate)){
                 return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
             }

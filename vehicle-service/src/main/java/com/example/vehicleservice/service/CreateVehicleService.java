@@ -15,10 +15,10 @@ public class CreateVehicleService {
     @Autowired
     VehicleRepository vehicleRepository;
 
-    public ResponseEntity<String> createVehicle(VehicleDTO vehicleDTO){
+    public ResponseEntity<String> createVehicle(Vehicle vehicle){
         try {
-            Vehicle v = new Vehicle(vehicleDTO);
-            vehicleRepository.save(v);
+            //Vehicle v = new Vehicle(vehicleDTO);
+            vehicleRepository.save(vehicle);
             return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
         } catch (Exception ex){
             ex.printStackTrace();

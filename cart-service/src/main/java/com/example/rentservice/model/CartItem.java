@@ -30,6 +30,6 @@ public class CartItem {
     @Column(nullable = false)
     private String owner_username;
 
-    @Column(nullable = false)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Occupation time_span;
 }

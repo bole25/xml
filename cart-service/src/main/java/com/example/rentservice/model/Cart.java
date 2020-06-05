@@ -25,4 +25,8 @@ public class Cart {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<CartItem> items;
 
+    public boolean addCartItem(CartItem cartItem){
+        return items.add(cartItem);
+    }
+
 }

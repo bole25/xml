@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/vehicle")
 public class CreateVehicleController {
+
     @Autowired
     CreateVehicleService createVehicleService;
 

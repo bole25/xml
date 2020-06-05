@@ -1,6 +1,5 @@
 package com.example.adminservice.model;
 
-import com.sun.javafx.beans.IDProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

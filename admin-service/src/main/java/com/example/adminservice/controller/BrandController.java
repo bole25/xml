@@ -27,6 +27,7 @@ public class BrandController {
 
     @GetMapping("/getall")
     public ResponseEntity<Set<Brand>> getAll(){
+        System.out.println("pogodjen admin endpoint");
         return brandService.getAll();
     }
 }

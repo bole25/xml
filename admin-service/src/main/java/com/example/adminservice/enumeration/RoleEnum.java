@@ -1,5 +1,5 @@
 package com.example.adminservice.enumeration;
 
 public enum RoleEnum {
-	CLIENT, COMPANY, ADMINISTRATOR, VEHICLE, PKI
+	ROLE_CLIENT, ROLE_COMPANY, ROLE_ADMIN, ROLE_CAR, PKI
 }

@@ -104,13 +104,20 @@ services:
                  image: cart-service-img
                  container_name: cartServiceContainer
                  hostname: cart-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
+                         DATABASE_SCHEMA: cartdb
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - cart-service
                  volumes:
                         - $HOME/.m2:/root/.m2
-       
+                 depends_on:
+                        - database
+
+      
         report-service:
                  build: ./report-service
                  image: report-service-img

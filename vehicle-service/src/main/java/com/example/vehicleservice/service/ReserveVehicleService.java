@@ -11,7 +11,7 @@ import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
 
 @Service
-public class ReserveVehicle {
+public class ReserveVehicleService {
 
 	@Autowired
 	VehicleRepository vehicleRepo;

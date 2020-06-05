@@ -51,9 +51,20 @@ public class Vehicle {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Occupation> occupations;
+    
+    public Vehicle(String brand, String model, Double price, String companyUsername, Date startDate, Date endDate) {
+		super();
+		this.brand = brand;
+		this.model = model;
+		this.price = price;
+		this.companyUsername = companyUsername;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.occupations = new HashSet<Occupation>();
+	}
 
 
-    public Vehicle(VehicleDTO vehicleDTO) throws ParseException {
+	public Vehicle(VehicleDTO vehicleDTO) throws ParseException {
         this.allowed_mileage = vehicleDTO.getAllowed_mileage();
         this.brand = vehicleDTO.getBrand();
         this.child_seat = vehicleDTO.getChild_seat();

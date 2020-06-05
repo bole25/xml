@@ -20,7 +20,7 @@ public class CreateVehicleController {
     CreateVehicleService createVehicleService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> createVehicle(@RequestBody Vehicle vehicle){
+    public ResponseEntity<String> createVehicle(@RequestBody VehicleDTO vehicle){
         return createVehicleService.createVehicle(vehicle);
     }
 }

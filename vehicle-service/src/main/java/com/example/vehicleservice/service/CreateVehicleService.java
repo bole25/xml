@@ -9,20 +9,60 @@ import com.example.vehicleservice.dto.VehicleDTO;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 @Service
 public class CreateVehicleService {
 
     @Autowired
     VehicleRepository vehicleRepository;
 
-    public ResponseEntity<String> createVehicle(Vehicle vehicle){
+    public ResponseEntity<String> createVehicle(VehicleDTO vehicle){
         try {
-            //Vehicle v = new Vehicle(vehicleDTO);
-            vehicleRepository.save(vehicle);
+            Vehicle v = new Vehicle(vehicle);
+            Vehicle v1 = vehicleRepository.save(v);
+            String s = "images/"+Long.toString(v1.getId())+".txt";
+            if(!makeDir(s, vehicle.getImages())){
+                return new ResponseEntity<>("mkdir failed", HttpStatus.BAD_REQUEST);
+            }
             return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
         } catch (Exception ex){
             ex.printStackTrace();
             return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
         }
+    }
+
+    private Boolean makeDir(String path, Set<String> images){
+        try {
+            File myObj = new File(path);
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+            try {
+                FileWriter myWriter = new FileWriter(path);
+                for(String s : images){
+                    myWriter.write(s+"\n");
+                }
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                return Boolean.TRUE;
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+                return Boolean.FALSE;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return Boolean.FALSE;
+        }
+
+
     }
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200", "http://localhost:8080" })
 public class VehicleDetailsController {
+
     @Autowired
     VehicleDetailsService vehicleDetailsService;
 

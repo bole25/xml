@@ -85,11 +85,8 @@ public class Vehicle {
         this.vehicle_class = vehicleDTO.getVehicle_class();
         this.companyUsername = vehicleDTO.getCompanyUsername();
 
-        SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
-        Date startDate = formatter1.parse(vehicleDTO.getStartDate());
-        Date endDate = formatter1.parse(vehicleDTO.getEndDate());
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.startDate = vehicleDTO.getStartDate();
+        this.endDate = vehicleDTO.getEndDate();
     }
 
 }

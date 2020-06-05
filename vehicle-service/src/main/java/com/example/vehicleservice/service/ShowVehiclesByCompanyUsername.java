@@ -28,7 +28,7 @@ public class ShowVehiclesByCompanyUsername {
 	         try {
 	             vehicleSet = vehicleRepository.showVehiclesByCompanyUsername(username);
 	             for (Vehicle v : vehicleSet) {
-	                 ShowVehicleDTO showVehicleDTO = new ShowVehicleDTO(v.getModel(), v.getBrand(), v.getPrice());
+	                 ShowVehicleDTO showVehicleDTO = new ShowVehicleDTO(v);
 	                 showVehicleDTOS.add(showVehicleDTO);
 	             }
 	             return new ResponseEntity<>(showVehicleDTOS,HttpStatus.OK);

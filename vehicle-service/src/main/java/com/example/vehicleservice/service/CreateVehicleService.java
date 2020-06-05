@@ -26,9 +26,7 @@ public class CreateVehicleService {
             Vehicle v = new Vehicle(vehicle);
             Vehicle v1 = vehicleRepository.save(v);
             String s = "images/"+Long.toString(v1.getId())+".txt";
-            if(!makeDir(s, vehicle.getImages())){
-                return new ResponseEntity<>("mkdir failed", HttpStatus.BAD_REQUEST);
-            }
+            makeDir(s, vehicle.getImages());
             return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
         } catch (Exception ex){
             ex.printStackTrace();
@@ -36,7 +34,7 @@ public class CreateVehicleService {
         }
     }
 
-    private Boolean makeDir(String path, Set<String> images){
+    private void makeDir(String path, Set<String> images){
         try {
             File myObj = new File(path);
             if (myObj.createNewFile()) {
@@ -44,23 +42,20 @@ public class CreateVehicleService {
             } else {
                 System.out.println("File already exists.");
             }
-            try {
-                FileWriter myWriter = new FileWriter(path);
-                for(String s : images){
-                    myWriter.write(s+"\n");
-                }
-                myWriter.close();
-                System.out.println("Successfully wrote to the file.");
-                return Boolean.TRUE;
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-                return Boolean.FALSE;
-            }
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
-            return Boolean.FALSE;
+        }
+        try {
+            FileWriter myWriter = new FileWriter(path);
+            for(String s : images){
+                myWriter.write(s+"\n");
+            }
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
 
 

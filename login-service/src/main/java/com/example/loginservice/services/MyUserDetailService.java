@@ -28,7 +28,7 @@ public class MyUserDetailService implements UserDetailsService {
 
         UserCredentials user= credentialsRepository.findByUsername(username);
 
-        if (user == null) {
+        if (user == null || user.getActive() == Boolean.FALSE) {
             throw new UsernameNotFoundException(username + "not found");
         }
 

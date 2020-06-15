@@ -25,7 +25,6 @@ public class SearchVehicleService {
         Set<Vehicle> retVehicles = new HashSet<>();
 
         try {
-            //SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
             Date startDate = searchDTO.getStartDate();
             Date endDate = searchDTO.getEndDate();
             if(startDate.after(endDate)){

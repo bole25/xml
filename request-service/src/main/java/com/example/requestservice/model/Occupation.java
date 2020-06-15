@@ -1,16 +1,15 @@
-package com.example.vehicleservice.model;
-
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+package com.example.requestservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,19 +17,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 public class Occupation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long user_id;
+    private String username;
 
     private Date startDate;
     private Date endDate;
 
-    public Occupation(Long parseLong, Date sD, Date eD) {
-        this.user_id = parseLong;
+    public Occupation(String parseLong, Date sD, Date eD) {
+        this.username = parseLong;
         this.startDate = sD;
         this.endDate = eD;
     }
-    
+
 }

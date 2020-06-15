@@ -12,6 +12,8 @@ import com.example.vehicleservice.repository.VehicleRepository;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +27,7 @@ public class CreateVehicleService {
         try {
             Vehicle v = new Vehicle(vehicle);
             Vehicle v1 = vehicleRepository.save(v);
-            String s = "images/"+Long.toString(v1.getId())+".txt";
+            String s = Long.toString(v1.getId())+".txt";
             makeDir(s, vehicle.getImages());
             return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
         } catch (Exception ex){
@@ -37,7 +39,13 @@ public class CreateVehicleService {
     private void makeDir(String path, Set<String> images){
     
         try {
-            File myObj = new File(path);
+            System.out.println(System.getProperty("user.dir"));
+            if(Files.notExists(Paths.get("images"))){
+                System.out.println("ne postoji");
+                File dir = new File("images");
+                dir.mkdirs();
+            }
+            File myObj = new File("images/"+path);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
@@ -48,7 +56,7 @@ public class CreateVehicleService {
             e.printStackTrace();
         }
         try {
-            FileWriter myWriter = new FileWriter(path);
+            FileWriter myWriter = new FileWriter("images/"+path);
             for(String s : images){
                 myWriter.write(s+"\n");
             }

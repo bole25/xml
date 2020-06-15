@@ -15,7 +15,7 @@ public class GetInfoFromLoginService {
 		String inputLine = "";
 		
         try {
-            URL url = new URL("http://localhost:8089"+path);
+            URL url = new URL("http://login-service:8089"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 

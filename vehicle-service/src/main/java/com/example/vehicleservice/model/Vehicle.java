@@ -23,36 +23,36 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column()
     private String brand;
 
-	@Column(nullable = false)
+	@Column()
     private String model;
 
-	@Column(nullable = false)
+	@Column()
 	private String fuel_type;
 
-	@Column(nullable = false)
+	@Column()
 	private String transmission;
 
-	@Column(nullable = false)
+	@Column()
 	private String vehicle_class;
 
-	@Column(nullable = false)
+	@Column()
 	private Double price;
 
-	@Column(nullable = false)
+	@Column()
 	private Integer mileage;
 
 
     private String companyUsername;
 
     //Datum od kada je moguce iznajmiti vozilo
-	@Column(nullable = false)
+	@Column()
     private Date startDate;
 
     //Datum do kada je moguce iznajmiti vozilo
-	@Column(nullable = false)
+	@Column()
 	private Date endDate;
 
     //Odnosi se na to da li automobil ima ogranicenu kilometrazu koju moze da predje prilikom rentanja
@@ -82,18 +82,18 @@ public class Vehicle {
 
 
 	public Vehicle(VehicleDTO vehicleDTO) throws ParseException {
-        this.allowed_mileage = vehicleDTO.getAllowed_mileage();
+        this.allowed_mileage = vehicleDTO.getAllowedMileage();
         this.brand = vehicleDTO.getBrand();
-        this.child_seat = vehicleDTO.getChild_seat();
-        this.limited_rent_mileage = vehicleDTO.getLimited_rent_mileage();
+        this.child_seat = vehicleDTO.getChildSeat();
+        this.limited_rent_mileage = vehicleDTO.getLimitedRentMileage();
         this.occupations = new HashSet<>();
-        this.collision_damage_waiver = vehicleDTO.getCollision_damage_waiver();
-        this.fuel_type = vehicleDTO.getFuel_type();
+        this.collision_damage_waiver = vehicleDTO.getCollisionDamageWaiver();
+        this.fuel_type = vehicleDTO.getFuelType();
         this.mileage = vehicleDTO.getMileage();
         this.model = vehicleDTO.getModel();
         this.price = vehicleDTO.getPrice();
         this.transmission = vehicleDTO.getTransmission();
-        this.vehicle_class = vehicleDTO.getVehicle_class();
+        this.vehicle_class = vehicleDTO.getVehicleClass();
         this.companyUsername = vehicleDTO.getCompanyUsername();
 
         this.startDate = vehicleDTO.getStartDate();

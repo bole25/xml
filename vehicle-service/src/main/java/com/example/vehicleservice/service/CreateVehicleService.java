@@ -37,6 +37,7 @@ public class CreateVehicleService {
     }
 
     private void makeDir(String path, Set<String> images){
+    
         try {
             System.out.println(System.getProperty("user.dir"));
             if(Files.notExists(Paths.get("images"))){

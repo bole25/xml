@@ -26,4 +26,9 @@ public class SearchVehicleController {
         System.out.println(searchDTO);
         return searchVehicleService.searchVehicle(searchDTO);
     }
+    
+    @GetMapping("/allCars")
+    public ResponseEntity<Set<Vehicle>> getAllVehicles(){
+        return searchVehicleService.getAllVehicles();
+    }
 }

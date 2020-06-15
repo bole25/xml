@@ -61,4 +61,27 @@ public class SearchVehicleService {
         }
         return ret;
     }
+    
+    
+    public ResponseEntity<Set<Vehicle>> getAllVehicles(){
+        Set<Vehicle> vehicles = new HashSet<>();
+        vehicles = vehicleRepository.showVehicles();       
+        return new ResponseEntity<>(vehicles, HttpStatus.OK);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

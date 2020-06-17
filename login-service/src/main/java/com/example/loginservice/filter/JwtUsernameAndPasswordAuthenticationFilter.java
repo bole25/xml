@@ -69,5 +69,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .compact();
 
         response.addHeader("Authorization", "Bearer " + token);
+        response.addHeader("Role", auth.getAuthorities().toArray()[0].toString());
     }
 }

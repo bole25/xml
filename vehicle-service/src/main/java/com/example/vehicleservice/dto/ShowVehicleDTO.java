@@ -11,11 +11,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class ShowVehicleDTO {
+    private Long id;
     private String model;
     private String brand;
     private Double price;
     
     public ShowVehicleDTO(Vehicle v) {
+        id = v.getId();
     	model = v.getModel();
     	brand = v.getBrand();
     	price = v.getPrice();

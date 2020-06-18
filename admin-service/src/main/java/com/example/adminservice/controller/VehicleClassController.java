@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 @RestController
@@ -16,17 +17,18 @@ public class VehicleClassController {
     @Autowired
     VehicleClassService vehicleClassService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<String> createVehicleClass(@RequestBody VehicleClass vc){
         return vehicleClassService.createVehicleClass(vc);
     }
 
-    @PostMapping("/delete/{name}")
+    @PostMapping("/{name}")
+    @Transactional
     public ResponseEntity<String> deleteVehicleClass(@PathVariable("name") String name){
         return vehicleClassService.deleteVehicleClass(name);
     }
 
-    @GetMapping("/getall")
+    @GetMapping()
     public ResponseEntity<Set<VehicleClass>> getAll(){
         return vehicleClassService.getAll();
     }

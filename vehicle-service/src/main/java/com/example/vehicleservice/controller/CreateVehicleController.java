@@ -14,14 +14,13 @@ import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.service.CreateVehicleService;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:4200"})
 @RequestMapping("/vehicle")
 public class CreateVehicleController {
 
     @Autowired
     CreateVehicleService createVehicleService;
 
-    @PostMapping()
+    @PostMapping("")
     public ResponseEntity<String> createVehicle(@RequestBody VehicleDTO vehicle){
         return createVehicleService.createVehicle(vehicle);
 

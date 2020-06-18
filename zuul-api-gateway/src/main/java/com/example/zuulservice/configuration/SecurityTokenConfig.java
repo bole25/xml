@@ -29,9 +29,10 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/login-service/**").permitAll()
                     .antMatchers("/register-service/**").permitAll()
-                    .antMatchers("/admin-service/**").hasRole("ADMIN")
+                    .antMatchers("/admin-service/**").permitAll()
                     .antMatchers("/gps-service/**").hasRole("CAR")
-                    .anyRequest().authenticated();
+                    .antMatchers("/vehicle-service/**").permitAll()
+                    .anyRequest().authenticated().and().cors();
     }
 
 

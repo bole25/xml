@@ -15,19 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200", "http://localhost:8080" })
+@RequestMapping("/search")
 public class SearchVehicleController {
 
     @Autowired
     SearchVehicleService searchVehicleService;
 
-    @PostMapping("/search")
+    @PostMapping()
     public ResponseEntity<Set<Vehicle>> searchVehicles(@RequestBody SearchDTO searchDTO){
         System.out.println(searchDTO);
         return searchVehicleService.searchVehicle(searchDTO);
     }
     
-    @GetMapping("/allCars")
+    @GetMapping()
     public ResponseEntity<Set<Vehicle>> getAllVehicles(){
         return searchVehicleService.getAllVehicles();
     }

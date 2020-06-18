@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 @RestController
@@ -15,17 +16,18 @@ public class BrandController {
     @Autowired
     BrandService brandService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<String> createBrand(@RequestBody Brand brand){
         return brandService.createBrand(brand);
     }
 
-    @PostMapping("/delete/{name}")
+    @PostMapping("/{name}")
+    @Transactional
     public ResponseEntity<String> deleteBrand(@PathVariable("name") String name){
         return brandService.deleteBrand(name);
     }
 
-    @GetMapping("/getall")
+    @GetMapping()
     public ResponseEntity<Set<Brand>> getAll(){
         System.out.println("pogodjen admin endpoint");
         return brandService.getAll();

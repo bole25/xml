@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 @RestController
@@ -15,17 +16,18 @@ public class FuelTypeController {
     @Autowired
     FuelTypeService fuelTypeService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<String> createFuelType(@RequestBody FuelType fuelType){
         return fuelTypeService.createFuelType(fuelType);
     }
 
-    @PostMapping("/delete/{name}")
+    @PostMapping("/{name}")
+    @Transactional
     public ResponseEntity<String> deleteFuelType(@PathVariable("name") String name){
         return fuelTypeService.deleteFuelType(name);
     }
 
-    @GetMapping("/getall")
+    @GetMapping()
     public ResponseEntity<Set<FuelType>> getAll(){
         return fuelTypeService.getAll();
     }

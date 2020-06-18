@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 @RestController
@@ -17,17 +18,18 @@ public class TransmissionController {
     @Autowired
     TransmissionService transmissionService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<String> createTransmission(@RequestBody Transmission transmission){
         return transmissionService.createTransmission(transmission);
     }
 
-    @PostMapping("/delete/{name}")
+    @PostMapping("/{name}")
+    @Transactional
     public ResponseEntity<String> deleteTransmission(@PathVariable("name") String name){
         return transmissionService.deleteTransmission(name);
     }
 
-    @GetMapping("/getall")
+    @GetMapping()
     public ResponseEntity<Set<Transmission>> getAll(){
         return transmissionService.getAll();
     }

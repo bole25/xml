@@ -22,12 +22,13 @@ public class ZuulApiGatewayApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ZuulApiGatewayApplication.class, args);
 	}
+	@SuppressWarnings("deprecation")
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedHeaders("*").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/**").allowedHeaders("*").allowedOrigins("http://localhost:4200").allowedMethods("GET", "POST", "PUT", "DELETE");
 			}
 		};
 	}

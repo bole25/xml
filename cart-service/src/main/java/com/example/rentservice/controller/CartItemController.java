@@ -27,7 +27,7 @@ public class CartItemController {
     public ResponseEntity<String> addCartItem(@RequestBody CartItem item, @RequestHeader(value = "Username") String username){
         boolean successful = cartService.addCartItem(item, username);
         if(successful){
-            return new ResponseEntity<String>("Ok", HttpStatus.CREATED);
+            return new ResponseEntity<String>("", HttpStatus.CREATED);
         }else{
             return new ResponseEntity<String>("Not Successful", HttpStatus.I_AM_A_TEAPOT);
         }
@@ -43,7 +43,7 @@ public class CartItemController {
         }
         boolean success = cartService.removeCartItem(username, id);
         if(success){
-            return new ResponseEntity<>("Item successfully removed from cart", HttpStatus.OK);
+            return new ResponseEntity<>("", HttpStatus.OK);
         }
         return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
     }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Set;
 
+//Username will be extracted from header
 @RestController
 @RequestMapping("/cart")
 public class CartItemController {

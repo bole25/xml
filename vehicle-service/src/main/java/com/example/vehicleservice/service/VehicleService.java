@@ -63,10 +63,10 @@ public class VehicleService {
             String s = Long.toString(v1.getId())+".txt";
             makeDir(s, vehicle.getImages());
             return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
-        }
+            } catch (Exception ex){
+                ex.printStackTrace();
+                return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
+            }
     }
 
     public ResponseEntity<Set<ShowVehicleDTO>> GetVehiclesByDateAndCompanyUsername(SearchByCompanyUsernameDTO search) {
@@ -80,7 +80,25 @@ public class VehicleService {
         }
         return new ResponseEntity<>(vehiclesDTO,HttpStatus.OK);
     }
-    
+
+
+    public ResponseEntity<Set<VehicleDTO>> getMyCars(String username){
+        try {
+            Set<Vehicle> vehicles = vehicleRepository.showVehiclesByCompanyUsername(username);
+            Set<VehicleDTO> retSet = new HashSet<>();
+            for(Vehicle v : vehicles){
+                VehicleDTO vehicleDTO = new VehicleDTO(v);
+                retSet.add(vehicleDTO);
+            }
+            return new ResponseEntity<>(retSet, HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+
     private void makeDir(String path, Set<String> images){
     
         try {

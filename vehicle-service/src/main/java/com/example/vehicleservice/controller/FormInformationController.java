@@ -16,7 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @RestController
-@RequestMapping("/formDetails")
+@RequestMapping()
 public class FormInformationController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class FormInformationController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return new ResponseEntity<>(infoService.getData("/brand/getall"), headers, HttpStatus.OK);
+        return new ResponseEntity<>(infoService.getData("/brand"), headers, HttpStatus.OK);
     }
 
     @GetMapping("/transmissions")
@@ -37,7 +37,7 @@ public class FormInformationController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return new ResponseEntity<>(infoService.getData("/transmission/getall"), headers, HttpStatus.OK);
+        return new ResponseEntity<>(infoService.getData("/transmission"), headers, HttpStatus.OK);
     }
 
     @GetMapping("/vehicle_classes")
@@ -46,7 +46,7 @@ public class FormInformationController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return new ResponseEntity<>(infoService.getData("/vehicleclass/getall"), headers, HttpStatus.OK);
+        return new ResponseEntity<>(infoService.getData("/vehicleclass"), headers, HttpStatus.OK);
     }
 
     @GetMapping("/fuel_type")
@@ -55,6 +55,6 @@ public class FormInformationController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return new ResponseEntity<>(infoService.getData("/fueltype/getall"), headers, HttpStatus.OK);
+        return new ResponseEntity<>(infoService.getData("/fueltype"), headers, HttpStatus.OK);
     }
 }

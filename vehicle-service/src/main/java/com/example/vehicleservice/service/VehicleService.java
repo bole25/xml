@@ -62,7 +62,7 @@ public class VehicleService {
             Vehicle v1 = vehicleRepository.save(v);
             String s = Long.toString(v1.getId())+".txt";
             makeDir(s, vehicle.getImages());
-            return new ResponseEntity<>("Vehicle created", HttpStatus.OK);
+            return new ResponseEntity<>("", HttpStatus.OK);
             } catch (Exception ex){
                 ex.printStackTrace();
                 return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);

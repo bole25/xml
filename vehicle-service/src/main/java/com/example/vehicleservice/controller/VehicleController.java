@@ -42,7 +42,8 @@ public class VehicleController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> createVehicle(@RequestBody VehicleDTO vehicle){
+    public ResponseEntity<String> createVehicle(@RequestBody VehicleDTO vehicle, @RequestHeader ("Username") String username ){
+    	vehicle.setCompanyUsername(username);
         return vehicleService.createVehicle(vehicle);
 
     }

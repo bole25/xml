@@ -51,7 +51,7 @@ public class SearchVehicleService {
         }
     }
 
-    private Boolean compareDates(Date startDate, Date endDate, Date startCompare, Date endCompare){
+    public Boolean compareDates(Date startDate, Date endDate, Date startCompare, Date endCompare){
         Boolean ret = Boolean.FALSE;
         if(startDate.after(endCompare)){
             ret = Boolean.TRUE;

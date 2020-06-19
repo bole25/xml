@@ -26,4 +26,6 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
     @Query(value = "select * from vehicle where company_username = ?1",nativeQuery = true)
     Set<Vehicle> showVehiclesByCompanyUsername(String username);
 
+    @Query(value = "select * from vehicle where id = ?1", nativeQuery = true)
+    Vehicle getVehicle(Long id);
 }

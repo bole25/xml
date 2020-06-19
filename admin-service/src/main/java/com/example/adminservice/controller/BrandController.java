@@ -21,7 +21,7 @@ public class BrandController {
         return brandService.createBrand(brand);
     }
 
-    @PostMapping("/{name}")
+    @DeleteMapping("/{name}")
     @Transactional
     public ResponseEntity<String> deleteBrand(@PathVariable("name") String name){
         return brandService.deleteBrand(name);
@@ -29,7 +29,6 @@ public class BrandController {
 
     @GetMapping()
     public ResponseEntity<Set<Brand>> getAll(){
-        System.out.println("pogodjen admin endpoint");
         return brandService.getAll();
     }
 }

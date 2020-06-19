@@ -1,5 +1,7 @@
 package com.example.vehicleservice.service;
 
+import com.example.vehicleservice.dto.SearchByCompanyUsernameDTO;
+import com.example.vehicleservice.dto.ShowVehicleDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,18 +12,49 @@ import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 @Service
-public class CreateVehicleService {
+public class VehicleService {
 
     @Autowired
     VehicleRepository vehicleRepository;
+
+    public Set<Vehicle> showVehicles() {
+        return vehicleRepository.showVehicles();
+    }
+
+    public ResponseEntity<VehicleDTO> getVehicleDetails(Long id){
+        try {
+            Vehicle v = vehicleRepository.getDetails(id);
+            VehicleDTO vehicleDTO = new VehicleDTO(v);
+            try {
+                String s = "images/"+Long.toString(v.getId())+".txt";
+                File myObj = new File(s);
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    vehicleDTO.getImages().add(data);
+                }
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+            return new ResponseEntity<>(vehicleDTO, HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
 
     public ResponseEntity<String> createVehicle(VehicleDTO vehicle){
         try {
@@ -36,6 +69,18 @@ public class CreateVehicleService {
         }
     }
 
+    public ResponseEntity<Set<ShowVehicleDTO>> GetVehiclesByDateAndCompanyUsername(SearchByCompanyUsernameDTO search) {
+
+        Set<ShowVehicleDTO> vehiclesDTO = new HashSet<ShowVehicleDTO>();
+        Set<Vehicle> vehicles = vehicleRepository.searchVehicle(search.getFrom(), search.getTo());
+        for(Vehicle v : vehicles) {
+            if(v.getCompanyUsername().equals(search.getUsername())) {
+                vehiclesDTO.add(new ShowVehicleDTO(v));
+            }
+        }
+        return new ResponseEntity<>(vehiclesDTO,HttpStatus.OK);
+    }
+    
     private void makeDir(String path, Set<String> images){
     
         try {
@@ -69,4 +114,5 @@ public class CreateVehicleService {
 
 
     }
+
 }

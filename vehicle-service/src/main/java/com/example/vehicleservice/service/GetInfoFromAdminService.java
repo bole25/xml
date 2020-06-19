@@ -21,7 +21,7 @@ public class GetInfoFromAdminService {
         String inputLine = "";
 
         try {
-            URL url = new URL("http://admin-service:8082"+path);
+            URL url = new URL("http://localhost:8082"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 
@@ -36,7 +36,7 @@ public class GetInfoFromAdminService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        System.out.println(inputLine);
         return inputLine;
     }
 }

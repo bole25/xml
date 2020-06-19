@@ -2,6 +2,7 @@ package com.example.vehicleservice.controller;
 
 import java.util.Set;
 
+import com.example.vehicleservice.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,13 +13,12 @@ import com.example.vehicleservice.dto.ReservationDTO;
 import com.example.vehicleservice.dto.SearchByCompanyUsernameDTO;
 import com.example.vehicleservice.dto.ShowVehicleDTO;
 import com.example.vehicleservice.service.ReserveVehicleService;
-import com.example.vehicleservice.service.ShowVehiclesService;
 
 @RestController
 public class ReserveVehicleController {
 
 	@Autowired
-	private ShowVehiclesService vehicleService;
+	private VehicleService vehicleService;
 	
 	@Autowired
 	private ReserveVehicleService reserveService;

@@ -23,8 +23,7 @@ public class TransmissionController {
         return transmissionService.createTransmission(transmission);
     }
 
-    @DeleteMapping("/{name}")
-    @Transactional
+    @PostMapping("/{name}")
     public ResponseEntity<String> deleteTransmission(@PathVariable("name") String name){
         return transmissionService.deleteTransmission(name);
     }

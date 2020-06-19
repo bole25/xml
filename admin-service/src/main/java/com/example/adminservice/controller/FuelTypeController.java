@@ -21,8 +21,7 @@ public class FuelTypeController {
         return fuelTypeService.createFuelType(fuelType);
     }
 
-    @DeleteMapping("/{name}")
-    @Transactional
+    @PostMapping("/{name}")
     public ResponseEntity<String> deleteFuelType(@PathVariable("name") String name){
         return fuelTypeService.deleteFuelType(name);
     }

@@ -30,4 +30,19 @@ public class CartService {
             return false;
         }
     }
+
+    public boolean removeCartItem(String owner_username, Long item_id){
+        Cart cart = cartRepository.getCartByUsername(owner_username);
+        if(cart == null){
+            return false;
+        }
+        for(CartItem ci : cart.getItems()){
+            if(ci.getId() == item_id){
+                cart.getItems().remove(ci);
+                cartRepository.save(cart);
+                break;
+            }
+        }
+        return true;
+    }
 }

@@ -32,4 +32,19 @@ public class CartItemController {
             return new ResponseEntity<String>("Not Successful", HttpStatus.I_AM_A_TEAPOT);
         }
     }
+
+    @DeleteMapping("/{item_id}")
+    public ResponseEntity<String> removeCartItem(@PathVariable String item_id, @RequestHeader(value = "Username") String username){
+        Long id;
+        try {
+            id = Long.valueOf(item_id);
+        }catch (NumberFormatException e){
+            return new ResponseEntity<>("Id given in the url path is not a numer",HttpStatus.BAD_REQUEST);
+        }
+        boolean success = cartService.removeCartItem(username, id);
+        if(success){
+            return new ResponseEntity<>("Item successfully removed from cart", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
+    }
 }

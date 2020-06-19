@@ -15,7 +15,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Vehicle {
@@ -98,6 +97,10 @@ public class Vehicle {
 
         this.startDate = vehicleDTO.getStartDate();
         this.endDate = vehicleDTO.getEndDate();
+    }
+
+    public Vehicle(){
+        this.occupations = new HashSet<>();
     }
 
 }

@@ -1,11 +1,17 @@
 package com.example.vehicleservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class ReservationDTO {
 
 	private Long id;
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date start;
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date end;
 	public ReservationDTO(Long id, Date start, Date end) {
 		super();

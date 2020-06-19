@@ -38,5 +38,8 @@ public class ReservationDTO {
 		this.end = end;
 	}
 	
+	public ReservationDTO() {
+		
+	}
 	
 }

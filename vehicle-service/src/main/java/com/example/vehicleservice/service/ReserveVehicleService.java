@@ -53,7 +53,7 @@ public class ReserveVehicleService {
 		 Occupation occupation = new Occupation(null, reservationDTO.getStart(), reservationDTO.getEnd());
 		 vehicle.getOccupations().add(occupation);
 		 vehicleRepo.save(vehicle);
-		 return new ResponseEntity<>("Car successfully reserved", HttpStatus.OK);
+		 return new ResponseEntity<>("", HttpStatus.OK);
 	 }
 
 	 private Boolean notInOccupation(Date start, Date end, Date occStart, Date occEnd){

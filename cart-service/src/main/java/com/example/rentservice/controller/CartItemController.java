@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Set;
 
+//Username will be extracted from header
 @RestController
-@RequestMapping("/cart/{username}")
+@RequestMapping("/cart")
 public class CartItemController {
 
     @Autowired
     CartService cartService;
 
     @GetMapping()
-    public ResponseEntity<Set<CartItem>> getCartItems(@PathVariable String username){
+    public ResponseEntity<Set<CartItem>> getCartItems(@RequestHeader(value = "Username") String username) {
         return new ResponseEntity<>(cartService.getCartItems(username), HttpStatus.OK);
     }
 
     @PostMapping()
-    public ResponseEntity<String> addCartItem(@RequestBody CartItem item, @PathVariable String username){
+    public ResponseEntity<String> addCartItem(@RequestBody CartItem item, @RequestHeader(value = "Username") String username){
         boolean successful = cartService.addCartItem(item, username);
         if(successful){
             return new ResponseEntity<String>("Ok", HttpStatus.CREATED);

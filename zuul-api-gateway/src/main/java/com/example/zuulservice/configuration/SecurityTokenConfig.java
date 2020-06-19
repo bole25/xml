@@ -1,20 +1,15 @@
 package com.example.zuulservice.configuration;
 
-import com.example.zuulservice.model.JwtTokenAuthenticationFilter;
+import com.example.zuulservice.filters.JwtTokenAuthenticationFilter;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.Collections;
 
 @EnableWebSecurity
 public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
@@ -29,7 +24,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/login-service/**").permitAll()
                     .antMatchers("/register-service/**").permitAll()
-                    .antMatchers("/admin-service/**").permitAll()
+                    .antMatchers("/admin-service/**").hasRole("ADMIN")
                     .antMatchers("/gps-service/**").hasRole("CAR")
                     .antMatchers("/vehicle-service/**").permitAll()
                     .anyRequest().authenticated().and().cors();

@@ -19,7 +19,6 @@ public class ManageUsersPermissionsController {
 	@Autowired
 	private GetInfoFromLoginService infoService;
 	
-	
 	@GetMapping("/block/{username}")
     public ResponseEntity<String> blockUsers(@PathVariable("username") String username){
 
@@ -36,7 +35,7 @@ public class ManageUsersPermissionsController {
         String path = "/users/activate/" + username;
         return new ResponseEntity<>(infoService.getData(path), headers, HttpStatus.OK);
     }
-	@GetMapping("/getAllByActivationCondition/{isActive}")
+	@GetMapping("/{isActive}")
     public ResponseEntity<String> getAllByActivationCondition(@PathVariable("isActive") String isActive){
 
         HttpHeaders headers = new HttpHeaders();

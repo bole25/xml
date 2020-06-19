@@ -1,6 +1,7 @@
 package com.example.adminservice.service;
 
 import com.example.adminservice.model.Brand;
+import com.example.adminservice.model.FuelType;
 import com.example.adminservice.model.Model;
 import com.example.adminservice.repository.BrandRepository;
 import com.example.adminservice.repository.ModelRepository;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Set;
 
 @Service
 public class ModelService {
@@ -50,4 +52,15 @@ public class ModelService {
         }
     }
 
+    @Transactional
+    public ResponseEntity<Set<Model>> getAll(){
+        try {
+            Set<Model> ret = modelRepository.getAll();
+            return new ResponseEntity<>(ret, HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
 }

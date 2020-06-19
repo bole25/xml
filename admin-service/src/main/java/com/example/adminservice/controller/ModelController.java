@@ -22,8 +22,7 @@ public class ModelController {
         return modelService.createModel(modelDTO.getBrandName(), modelDTO.getModelName());
     }
 
-    @DeleteMapping("/{name}")
-    @Transactional
+    @PostMapping("/{name}")
     public ResponseEntity<String> deleteModel(@PathVariable("name") String name){
         return modelService.deleteModel(name);
     }

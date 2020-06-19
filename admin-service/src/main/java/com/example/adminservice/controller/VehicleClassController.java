@@ -22,8 +22,7 @@ public class VehicleClassController {
         return vehicleClassService.createVehicleClass(vc);
     }
 
-    @DeleteMapping("/{name}")
-    @Transactional
+    @PostMapping("/{name}")
     public ResponseEntity<String> deleteVehicleClass(@PathVariable("name") String name){
         return vehicleClassService.deleteVehicleClass(name);
     }

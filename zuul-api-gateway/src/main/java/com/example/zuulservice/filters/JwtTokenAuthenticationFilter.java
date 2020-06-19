@@ -1,5 +1,6 @@
-package com.example.zuulservice.model;
+package com.example.zuulservice.filters;
 
+import com.example.zuulservice.model.HttpRequestWrapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,9 +21,11 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
 
+        HttpRequestWrapper reqWrapper = new HttpRequestWrapper(httpServletRequest);
         String header = httpServletRequest.getHeader("Authorization");
 
         if(header == null || !header.startsWith("Bearer ")){
+            reqWrapper.addHeader("Username","");
             filterChain.doFilter(httpServletRequest, httpServletResponse);
             return;
         }
@@ -36,6 +39,8 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
 
             String username = claims.getSubject();
 
+            reqWrapper.addHeader("Username",username);
+
             if(username != null) {
                 List<String> authorities = (List<String>)claims.get("authorities");
 
@@ -44,12 +49,13 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
                 );
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
+
             }
 
         }catch (Exception e){
             SecurityContextHolder.clearContext();
         }
 
-        filterChain.doFilter(httpServletRequest, httpServletResponse);
+        filterChain.doFilter(reqWrapper, httpServletResponse);
     }
 }

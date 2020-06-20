@@ -1,5 +1,7 @@
 package com.example.requestservice.model;
 
+import com.example.requestservice.dto.request_creation.RequestDTO;
+import com.example.requestservice.dto.request_creation.VehicleDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -25,4 +28,12 @@ public class Request {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Vehicle> vehicles;
+
+    public Request(RequestDTO request){
+        this.setOwner_username(request.getOwner_username());
+        this.vehicles = new HashSet<>();
+        for(VehicleDTO vehicle:request.getVehicles()){
+            vehicles.add(new Vehicle(vehicle));
+        }
+    }
 }

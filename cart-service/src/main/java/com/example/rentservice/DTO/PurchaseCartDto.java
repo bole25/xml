@@ -15,5 +15,5 @@ import java.util.Map;
 @AllArgsConstructor
 public class PurchaseCartDto {
 
-    private List<Map<String,Boolean>> bundleQuery;
+    private Map<String, String> bundleQuery;
 }

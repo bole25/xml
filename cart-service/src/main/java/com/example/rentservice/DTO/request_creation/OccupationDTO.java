@@ -1,4 +1,4 @@
-package com.example.requestservice.model;
+package com.example.rentservice.DTO.request_creation;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,21 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Occupation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class OccupationDTO {
 
     private Date startDate;
+
     private Date endDate;
 
-    public Occupation(Date sD, Date eD) {
+    public OccupationDTO(Date sD, Date eD) {
         this.startDate = sD;
         this.endDate = eD;
     }

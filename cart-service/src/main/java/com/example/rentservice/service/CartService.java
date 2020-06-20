@@ -17,6 +17,9 @@ public class CartService {
 
     public Set<CartItem> getCartItems(String username){
         Cart cart = cartRepository.getCartByUsername(username);
+        if (cart==null){
+            return null;
+        }
         return cart.getItems();
     }
 

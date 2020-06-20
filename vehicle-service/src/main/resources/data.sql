@@ -39,3 +39,27 @@ INSERT IGNORE INTO `vehicles`.`occupation` (`id`, `start_date`, `end_date`) VALU
 /*Connecting vehicle with occupations*/
 INSERT IGNORE INTO `vehicles`.`vehicle_occupations` (`vehicle_id`, `occupations_id`) VALUES ('3', '7');
 INSERT IGNORE INTO `vehicles`.`vehicle_occupations` (`vehicle_id`, `occupations_id`) VALUES ('3', '8');
+
+
+/*Adding Vehicles*/
+INSERT IGNORE INTO `vehicles`.`vehicle` (`id`, `brand`, `company_username`, `start_date`, `end_date`, `transmission`,
+                                         `price`, `model`, `fuel_type`, `mileage`, `vehicle_class`) VALUES
+('4', 'Toyota', 'blanusa', '2020-08-10', '2020-08-22','Manual','62','Prius', 'Electricity', '125000', 'Family car');
+
+/*Occupations for that vehicle*/
+INSERT IGNORE INTO `vehicles`.`occupation` (`id`, `start_date`, `end_date`) VALUES ('9', '2020-08-19', '2020-08-22');
+
+/*Connecting vehicle with occupations*/
+INSERT IGNORE INTO `vehicles`.`vehicle_occupations` (`vehicle_id`, `occupations_id`) VALUES ('4', '9');
+
+
+/*Adding Vehicles*/
+INSERT IGNORE INTO `vehicles`.`vehicle` (`id`, `brand`, `company_username`, `start_date`, `end_date`, `transmission`,
+                                         `price`, `model`, `fuel_type`, `mileage`, `vehicle_class`) VALUES
+('5', 'Mercedes', 'blanusa', '2020-07-23', '2020-08-02','Manual','52','SLR', 'Gasoline', '225000', 'Family car');
+
+/*Occupations for that vehicle*/
+INSERT IGNORE INTO `vehicles`.`occupation` (`id`, `start_date`, `end_date`) VALUES ('10', '2020-07-23', '2020-07-26');
+
+/*Connecting vehicle with occupations*/
+INSERT IGNORE INTO `vehicles`.`vehicle_occupations` (`vehicle_id`, `occupations_id`) VALUES ('5', '10');

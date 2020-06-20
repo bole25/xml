@@ -39,7 +39,7 @@ public class CartItemController {
         try {
             id = Long.valueOf(item_id);
         }catch (NumberFormatException e){
-            return new ResponseEntity<>("Id given in the url path is not a numer",HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Id given in the url path is not a number",HttpStatus.BAD_REQUEST);
         }
         boolean success = cartService.removeCartItem(username, id);
         if(success){

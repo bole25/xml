@@ -2,6 +2,7 @@ package com.example.requestservice.model;
 
 import com.example.requestservice.dto.request_creation.RequestDTO;
 import com.example.requestservice.dto.request_creation.VehicleDTO;
+import com.example.requestservice.enums.RequestStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +27,14 @@ public class Request {
     @Column(nullable = false)
     private String owner_username;
 
+    @Column(nullable = false)
+    private RequestStatus status;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Vehicle> vehicles;
 
     public Request(RequestDTO request){
+        this.status = RequestStatus.PENDING;
         this.setOwner_username(request.getOwner_username());
         this.vehicles = new HashSet<>();
         for(VehicleDTO vehicle:request.getVehicles()){

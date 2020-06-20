@@ -69,6 +69,9 @@ public class CreateRequestsService {
         String encodedJSON = gson.toJson(requests);
         requestClient.update(encodedJSON, username);
 
+        cart.setItems(new HashSet<>());
+        cartRepository.save(cart);
+
         return true;
     }
 

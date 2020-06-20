@@ -23,8 +23,5 @@ public class UserRequests {
     private String username;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Request> approved;
-
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Request> pending;
+    private Set<Request> requests;
 }

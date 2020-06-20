@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8083/vehicle"
+           elementFormDefault="qualified"
+           targetNamespace="http://localhost:8083/vehicle">
+
+  <xs:complexType name="vehicleDTO">
+    <xs:sequence>
+      <xs:element name="allowedMileage" type="xs:int" minOccurs="0"/>
+      <xs:element name="brand" type="xs:string" minOccurs="0"/>
+      <xs:element name="childSeat" type="xs:int" minOccurs="0"/>
+      <xs:element name="collisionDamageWaiver" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="companyUsername" type="xs:string" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="fuelType" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="images" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="limitedRentMileage" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="mileage" type="xs:int" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="price" type="xs:double" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="transmission" type="xs:string" minOccurs="0"/>
+      <xs:element name="vehicleClass" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="postVehicleRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="tns:vehicleDTO" name="vehicle"/>
+        <xs:element type="xs:string" name="companyUsername"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="postVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:long" name="idVehicle"/>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

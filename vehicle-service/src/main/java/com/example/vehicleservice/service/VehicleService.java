@@ -56,13 +56,14 @@ public class VehicleService {
         }
     }
 
-    public ResponseEntity<String> createVehicle(VehicleDTO vehicle){
+    public ResponseEntity<?> createVehicle(VehicleDTO vehicle, String username){
         try {
+            vehicle.setCompanyUsername(username);
             Vehicle v = new Vehicle(vehicle);
             Vehicle v1 = vehicleRepository.save(v);
             String s = Long.toString(v1.getId())+".txt";
             makeDir(s, vehicle.getImages());
-            return new ResponseEntity<>("", HttpStatus.OK);
+            return new ResponseEntity<>(v1, HttpStatus.OK);
             } catch (Exception ex){
                 ex.printStackTrace();
                 return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);

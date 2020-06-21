@@ -4,6 +4,7 @@ import com.example.requestservice.dto.request_creation.RequestDTO;
 import com.example.requestservice.enums.RequestStatus;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
+import com.example.requestservice.repository.RequestRepository;
 import com.example.requestservice.repository.UserRequestsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,13 @@ import java.util.Set;
 public class RequestsService {
 
     @Autowired
-    UserRequestsRepository requestsRepository;
+    UserRequestsRepository userRequestsRepository;
+
+    @Autowired
+    RequestRepository requestRepository;
 
     public Set<Request> getRequests(String username, RequestStatus type){
-        UserRequests user_requests = requestsRepository.getRequestsByUsername(username);
+        UserRequests user_requests = userRequestsRepository.getRequestsByUsername(username);
         if(user_requests==null){
             return null;
         }
@@ -32,19 +36,24 @@ public class RequestsService {
 
     public boolean createRequests(Set<RequestDTO> requestsDto, String username){
 
-        UserRequests request = requestsRepository.getRequestsByUsername(username);
+        UserRequests request = userRequestsRepository.getRequestsByUsername(username);
         if(request == null){
             return false;
         }
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
             requests.add(new Request(requestDTO));
-            if(requestDTO.getOwner_username().equals("BOLE")){
-                //TODO Salji soap
-            }
         }
 
-        requestsRepository.save(request);
+        userRequestsRepository.save(request);
         return true;
+    }
+
+    public Boolean areConnected(String sender, String receiver) {
+        // Number of requests between sender and receiver that are RESERVED
+        Long count = userRequestsRepository.connected(sender,receiver);
+        if (count > 0)
+            return Boolean.TRUE;
+        return Boolean.FALSE;
     }
 }

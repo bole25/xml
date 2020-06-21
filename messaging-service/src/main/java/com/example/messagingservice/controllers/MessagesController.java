@@ -44,7 +44,7 @@ public class MessagesController {
         //TODO proveri da li sender i receiver imaju "RESERVED" request
         boolean success = messagesService.sendMessage(username, messageDTO);
         if(!success){
-            return new ResponseEntity<>("Sender or Receiver do not exist in database",HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(username + " is not allowed to send a message to " + messageDTO.getText(),HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);
     }

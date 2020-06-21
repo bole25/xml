@@ -1,6 +1,5 @@
 package com.example.rentservice.feignClient;
 
-import com.example.rentservice.DTO.request_creation.RequestDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

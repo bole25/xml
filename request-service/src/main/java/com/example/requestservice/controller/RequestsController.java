@@ -49,6 +49,18 @@ public class RequestsController {
         return new ResponseEntity<>(rejected, HttpStatus.OK);
     }
 
+    //Check if logged in user is connected with the "receiver user", or in other words, do the share a request
+    // that is "RESERVED"
+    @GetMapping("areConnected/{receiver}")
+    public ResponseEntity<Boolean> areConnected(@PathVariable String receiver,
+                                               @RequestHeader(value = "Username") String sender){
+        Boolean connected= requestsService.areConnected(sender, receiver);
+        if(connected==null){
+            return new ResponseEntity<>(Boolean.FALSE, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(connected, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<?> createRequests(@RequestBody String encodedRequests, @RequestHeader(value = "Username") String username){
         Gson gson = new Gson();

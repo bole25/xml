@@ -1,5 +1,6 @@
-package com.example.reportservice.model;
+package com.example.reportservice.DTO;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,12 +8,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Rating {
+@AllArgsConstructor
+public class ReportDTO {
 
-    private Long id;
-
-    private Long user_id;
     private Long vehicle_id;
+
+    private String comment;
+
     private Integer rating;
-    
 }

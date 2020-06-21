@@ -1,7 +1,11 @@
 package com.example.requestservice.service;
 
+import com.example.requestservice.dto.VehicleReservationDTO;
+import com.example.requestservice.feignClient.VehicleClient;
 import com.example.requestservice.model.Request;
+import com.example.requestservice.model.Vehicle;
 import com.example.requestservice.repository.RequestRepository;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +18,9 @@ public class OwnerRequestsService {
 
     @Autowired
     private RequestRepository requestRepository;
+
+    @Autowired
+    private VehicleClient vehicleClient;
 
     public Set<Request> getPending(String username){
         return requestRepository.getOwnersPending(username);
@@ -31,6 +38,13 @@ public class OwnerRequestsService {
         }
         if(!request.get().getOwner_username().equals(username)){
             return false;
+        }
+        //TODO posalji zahtev za rezervaciju vehicle-service-u
+        for(Vehicle vehicle:request.get().getVehicles()){
+            Gson gson = new Gson();
+            String encodedBody = gson.toJson(new VehicleReservationDTO(
+                    vehicle.getVehicle_id(),vehicle.getTime_span().getStartDate(),vehicle.getTime_span().getEndDate()));
+            vehicleClient.sendReservation(encodedBody);
         }
         requestRepository.approveRequest(id);
         return true;

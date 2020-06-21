@@ -38,7 +38,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element type="xs:long" name="idVehicle"/>
-
       </xs:sequence>
     </xs:complexType>
   </xs:element>

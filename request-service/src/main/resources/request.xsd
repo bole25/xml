@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0"
+           targetNamespace="http://localhost:8085/owner/requests/pending"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8085/owner/requests/pending"
+           elementFormDefault="qualified"
+           >
+
+  <xs:complexType name="Request">
+    <xs:sequence>
+      <xs:element name="owner_username" type="xs:string" minOccurs="0"/>
+      <xs:element name="vehicles" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vehicle">
+    <xs:sequence>
+      <xs:element name="vehicle_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="vehicle_id" type="xs:long" minOccurs="0"/>
+      <xs:element name="time_span" type="tns:occupationDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="occupationDTO">
+    <xs:sequence>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="getRequestRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="companyName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="tns:Request" name="request"  minOccurs="0"
+                    maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

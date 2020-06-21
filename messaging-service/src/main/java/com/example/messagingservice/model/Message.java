@@ -1,41 +1,41 @@
 package com.example.messagingservice.model;
 
+import com.example.messagingservice.dto.MessageDTO;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Message {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@Column(nullable = false)
 	private String textMessage;
-	private User sender;
-	private User reciver;
-	
-	public Message() {
-		super();
-	}
-	
-	public Message(String textMessage, User sender, User reciver) {
-		super();
-		this.textMessage = textMessage;
-		this.sender = sender;
-		this.reciver = reciver;
-	}
-	public String getTextMessage() {
-		return textMessage;
-	}
-	public void setTextMessage(String textMessage) {
-		this.textMessage = textMessage;
-	}
-	public User getSender() {
-		return sender;
-	}
-	public void setSender(User sender) {
-		this.sender = sender;
-	}
-	public User getReciver() {
-		return reciver;
-	}
-	public void setReciver(User reciver) {
-		this.reciver = reciver;
-	}
-	
-	
+
+	@Column(nullable = false)
+	private String sender_username;
+
+	@Column(nullable = false)
+	private String receiver_username;
+
+	@Column(nullable = false)
+	private LocalDateTime time;
+
+    public Message(String sender, MessageDTO messageDTO) {
+    	this.sender_username = sender;
+    	this.textMessage = messageDTO.getText();
+    	this.receiver_username = messageDTO.getReceiver();
+    	this.time = LocalDateTime.now();
+    }
 }

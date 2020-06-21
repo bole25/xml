@@ -39,6 +39,9 @@ public class RequestsService {
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
             requests.add(new Request(requestDTO));
+            if(requestDTO.getOwner_username().equals("BOLE")){
+                //TODO Salji soap
+            }
         }
 
         requestsRepository.save(request);

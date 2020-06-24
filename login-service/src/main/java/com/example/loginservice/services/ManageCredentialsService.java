@@ -15,6 +15,7 @@ public class ManageCredentialsService {
 
     public boolean addCredentials(UserCredentials credentials){
 
+    	// izmeni da bude promenljiva rola
         credentials.setRole(RoleEnum.ROLE_CLIENT);
         credentials.setActive(Boolean.TRUE);
         UserCredentials returned_user = credentialsRepository.findByUsername(credentials.getUsername());

@@ -2,6 +2,12 @@ package com.example.loginservice.controllers;
 
 import com.example.loginservice.model.UserCredentials;
 import com.example.loginservice.services.ManageCredentialsService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +23,10 @@ public class ManageCredentialsController {
     ManageCredentialsService credentialsService;
 
     @PostMapping("/addCredentials")
-    protected ResponseEntity<Void> addCredentials(@RequestBody UserCredentials credentials){
+    protected ResponseEntity<Void> addCredentials(@RequestBody String encodedUser){
+    	Gson gson = new Gson();
+    	Type type = new TypeToken<UserCredentials>(){}.getType();
+    	UserCredentials credentials = gson.fromJson(encodedUser, type);
 
         boolean added = credentialsService.addCredentials(credentials);
 

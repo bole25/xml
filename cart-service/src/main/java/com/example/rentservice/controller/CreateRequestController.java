@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("request")
+@RequestMapping("/request")
 public class CreateRequestController {
 
     @Autowired

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,7 +41,11 @@ public class RegisterController {
     	UserDTO user = requestService.validateUser(sentValidation);
     	
     	if(user == null) {
-    		return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
+    		return new ResponseEntity<>("Username does not exist, or validation code is not correct", HttpStatus.BAD_REQUEST);
+    	}
+    	
+    	if(!user.getActive()) {
+    		return new ResponseEntity<>("Validation code has expired", HttpStatus.BAD_REQUEST);
     	}
     	
         boolean success = registerService.register(user);
@@ -50,6 +56,20 @@ public class RegisterController {
         }
         
     }
+    
+    @GetMapping("/{username}")
+    public ResponseEntity<Boolean> freeUser(@PathVariable String username){
+    	Boolean freeUsername;
+    	if(requestService.getRequest(username) != null) {
+    		freeUsername = false;
+    	} else {
+    		freeUsername = true;
+    	}
+    	return new ResponseEntity<Boolean>(freeUsername, HttpStatus.CREATED);
+    }
+
+    
+    
     
     
 }

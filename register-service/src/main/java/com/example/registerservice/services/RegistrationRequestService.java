@@ -35,11 +35,20 @@ public class RegistrationRequestService {
     	if(request.getValidationCode() != sentValidation.getValidationCode()) {
     		return null;
     	}
+
+    	
     	UserDTO user = new UserDTO();
     	user.setActive(true);
     	user.setPassword(request.getPassword());
     	user.setUsername(request.getUsername());
     	user.setRole(request.getRole());
+    	
+    	LocalTime time = LocalTime.now();
+    	time = time.minusMinutes(5);
+    	if(time.isAfter(request.getValidationTime())) {
+    		user.setActive(false);
+    	}
+    	
     	return user;
 	}
 	

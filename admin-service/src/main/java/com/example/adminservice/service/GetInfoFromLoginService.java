@@ -5,10 +5,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.example.adminservice.controller.BrandController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GetInfoFromLoginService {
+
+    Logger logger = LoggerFactory.getLogger(GetInfoFromLoginService.class);
 
 	public String getData(String path) {
 		

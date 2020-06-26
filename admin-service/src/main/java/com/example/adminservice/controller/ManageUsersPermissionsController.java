@@ -1,5 +1,7 @@
 package com.example.adminservice.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,8 @@ public class ManageUsersPermissionsController {
 
 	@Autowired
 	private GetInfoFromLoginService infoService;
+
+    Logger logger = LoggerFactory.getLogger(ManageUsersPermissionsController.class);
 	
 	@GetMapping("/block/{username}")
     public ResponseEntity<String> blockUsers(@PathVariable("username") String username){

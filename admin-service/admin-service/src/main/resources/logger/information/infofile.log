@@ -1,0 +1,67 @@
+26-06-2020 16:51:53.006 INFO  [main] c.e.a.AdminServiceApplication - Starting AdminServiceApplication on Dusan-PC with PID 1052 (D:\1 FAKULTET\Godina 4\XML\xml\admin-service\target\classes started by Dusan in D:\1 FAKULTET\Godina 4\XML\xml\admin-service)
+26-06-2020 16:51:53.008 INFO  [main] c.e.a.AdminServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 16:51:53.762 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 16:51:53.937 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 163ms. Found 5 JPA repository interfaces.
+26-06-2020 16:51:54.554 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 16:51:54.616 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 16:51:54.726 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 16:51:54.916 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 16:51:55.252 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 16:51:55.601 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8082
+26-06-2020 16:51:55.606 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 16:51:56.732 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 16:51:56.733 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+26-06-2020 16:51:58.755 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+26-06-2020 16:52:12.934 INFO  [main] c.e.a.AdminServiceApplication - Starting AdminServiceApplication on Dusan-PC with PID 4216 (D:\1 FAKULTET\Godina 4\XML\xml\admin-service\target\classes started by Dusan in D:\1 FAKULTET\Godina 4\XML\xml\admin-service)
+26-06-2020 16:52:12.936 INFO  [main] c.e.a.AdminServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 16:52:13.659 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 16:52:13.854 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 179ms. Found 5 JPA repository interfaces.
+26-06-2020 16:52:14.494 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 16:52:14.557 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 16:52:14.671 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 16:52:14.849 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 16:52:15.193 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 16:52:15.380 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+26-06-2020 16:52:15.411 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8082
+26-06-2020 16:52:15.413 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 16:52:15.448 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+26-06-2020 16:52:16.329 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+26-06-2020 16:52:16.337 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 16:52:16.865 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 16:52:16.874 INFO  [main] c.e.a.AdminServiceApplication - Started AdminServiceApplication in 4.255 seconds (JVM running for 4.73)
+26-06-2020 17:50:20.237 INFO  [main] c.e.a.AdminServiceApplication - Starting AdminServiceApplication on Dusan-PC with PID 2516 (D:\1 FAKULTET\Godina 4\XML\xml\admin-service\target\classes started by Dusan in D:\1 FAKULTET\Godina 4\XML\xml\admin-service)
+26-06-2020 17:50:20.239 INFO  [main] c.e.a.AdminServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 17:50:20.938 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 17:50:21.112 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 164ms. Found 5 JPA repository interfaces.
+26-06-2020 17:50:21.816 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 17:50:21.866 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 17:50:21.972 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 17:50:22.182 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 17:50:22.783 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 17:50:22.912 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8082
+26-06-2020 17:50:22.915 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:50:22.959 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+26-06-2020 17:50:23.003 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+26-06-2020 17:50:23.806 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+26-06-2020 17:50:23.814 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 17:50:24.288 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:50:24.296 INFO  [main] c.e.a.AdminServiceApplication - Started AdminServiceApplication in 4.388 seconds (JVM running for 4.868)
+26-06-2020 17:53:14.659 INFO  [main] c.e.a.AdminServiceApplication - Starting AdminServiceApplication on Dusan-PC with PID 3240 (D:\1 FAKULTET\Godina 4\XML\xml\admin-service\target\classes started by Dusan in D:\1 FAKULTET\Godina 4\XML\xml\admin-service)
+26-06-2020 17:53:14.661 INFO  [main] c.e.a.AdminServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 17:53:15.418 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 17:53:15.616 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 185ms. Found 5 JPA repository interfaces.
+26-06-2020 17:53:16.219 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 17:53:16.272 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 17:53:16.475 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 17:53:16.647 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 17:53:16.965 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 17:53:17.151 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+26-06-2020 17:53:17.188 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+26-06-2020 17:53:17.230 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8082
+26-06-2020 17:53:17.235 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:53:18.019 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+26-06-2020 17:53:18.027 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 17:53:18.732 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:53:18.742 INFO  [main] c.e.a.AdminServiceApplication - Started AdminServiceApplication in 4.457 seconds (JVM running for 4.938)

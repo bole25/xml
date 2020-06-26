@@ -1,0 +1,114 @@
+26-06-2020 17:01:21.112 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$229a0e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:01:21.313 INFO  [main] c.e.m.MessagingServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 17:01:21.845 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 17:01:22.026 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 173ms. Found 2 JPA repository interfaces.
+26-06-2020 17:01:22.216 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=32adb7bd-94ed-3b65-824c-74b78c3d0e7a
+26-06-2020 17:01:22.351 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.messagingservice.feignClinet.RequestClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:01:22.409 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$229a0e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:01:22.719 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 17:01:22.847 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 17:01:22.909 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 17:01:23.073 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:01:23.161 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 17:01:23.328 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 17:01:23.490 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+26-06-2020 17:01:23.507 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+26-06-2020 17:01:24.313 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+26-06-2020 17:01:24.320 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 17:01:24.868 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:01:24.976 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+26-06-2020 17:01:24.989 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+26-06-2020 17:01:25.959 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8088
+26-06-2020 17:01:25.962 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:01:25.962 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:01:25.970 INFO  [main] c.e.m.MessagingServiceApplication - Started MessagingServiceApplication in 5.594 seconds (JVM running for 6.139)
+26-06-2020 17:02:55.567 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:02:55.566
+26-06-2020 17:02:55.569 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:02:55.568
+26-06-2020 17:02:55.666 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:02:55.666
+26-06-2020 17:03:18.125 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$af26cecc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:03:18.415 INFO  [main] c.e.m.MessagingServiceApplication - No active profile set, falling back to default profiles: default
+26-06-2020 17:03:19.089 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+26-06-2020 17:03:19.419 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 322ms. Found 2 JPA repository interfaces.
+26-06-2020 17:03:19.783 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=32adb7bd-94ed-3b65-824c-74b78c3d0e7a
+26-06-2020 17:03:19.974 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.messagingservice.feignClinet.RequestClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:03:20.080 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$af26cecc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-06-2020 17:03:20.525 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+26-06-2020 17:03:20.696 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+26-06-2020 17:03:20.748 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:03:20.764 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+26-06-2020 17:03:21.084 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+26-06-2020 17:03:21.277 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+26-06-2020 17:03:21.470 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+26-06-2020 17:03:21.487 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+26-06-2020 17:03:22.326 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+26-06-2020 17:03:22.335 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+26-06-2020 17:03:22.777 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:03:22.891 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+26-06-2020 17:03:22.899 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+26-06-2020 17:03:23.746 INFO  [main] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8088
+26-06-2020 17:03:23.749 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+26-06-2020 17:03:23.749 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+26-06-2020 17:03:23.757 INFO  [main] c.e.m.MessagingServiceApplication - Started MessagingServiceApplication in 6.371 seconds (JVM running for 6.906)
+26-06-2020 17:03:37.010 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:03:37.009
+26-06-2020 17:03:37.062 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:03:37.062
+26-06-2020 17:03:37.159 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:03:37.159
+26-06-2020 17:05:35.552 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:05:35.552
+26-06-2020 17:05:35.569 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:05:35.569
+26-06-2020 17:05:35.572 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:05:35.572
+26-06-2020 17:05:44.933 INFO  [reactor-http-nio-2] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:05:44.933
+26-06-2020 17:05:44.935 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:05:44.935
+26-06-2020 17:05:44.939 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:05:44.939
+26-06-2020 17:10:52.805 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:10:52.805
+26-06-2020 17:10:52.811 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:10:52.810
+26-06-2020 17:10:52.821 INFO  [reactor-http-nio-3] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:10:52.821
+26-06-2020 17:13:10.156 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:13:10.156
+26-06-2020 17:13:10.159 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:13:10.159
+26-06-2020 17:13:10.161 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:13:10.161
+26-06-2020 17:16:17.275 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:16:17.274
+26-06-2020 17:16:17.298 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:16:17.298
+26-06-2020 17:16:17.300 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:16:17.300
+26-06-2020 17:18:19.768 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:18:19.768
+26-06-2020 17:18:19.783 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:18:19.783
+26-06-2020 17:18:19.786 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:18:19.786
+26-06-2020 17:23:50.267 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:23:50.267
+26-06-2020 17:23:50.289 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:23:50.289
+26-06-2020 17:23:50.292 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:23:50.291
+26-06-2020 17:25:43.501 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:25:43.501
+26-06-2020 17:25:43.520 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:25:43.520
+26-06-2020 17:25:43.524 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:25:43.524
+26-06-2020 17:26:50.379 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:26:50.379
+26-06-2020 17:26:50.383 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:26:50.383
+26-06-2020 17:26:50.384 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:26:50.384
+26-06-2020 17:28:27.321 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:28:27.321
+26-06-2020 17:28:27.331 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:28:27.331
+26-06-2020 17:28:27.333 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:28:27.333
+26-06-2020 17:28:36.741 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:28:36.741
+26-06-2020 17:28:36.757 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:28:36.757
+26-06-2020 17:28:36.760 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:28:36.759
+26-06-2020 17:32:38.234 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:32:38.234
+26-06-2020 17:32:38.243 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:32:38.243
+26-06-2020 17:32:38.246 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:32:38.246
+26-06-2020 17:32:53.368 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:32:53.368
+26-06-2020 17:32:53.400 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:32:53.400
+26-06-2020 17:32:53.403 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:32:53.403
+26-06-2020 17:33:09.018 INFO  [reactor-http-nio-4] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:33:09.018
+26-06-2020 17:33:09.028 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:33:09.028
+26-06-2020 17:33:09.033 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:33:09.033
+26-06-2020 17:33:31.522 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke koje je poslao. 2020-06-26T17:33:31.522
+26-06-2020 17:33:31.564 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je zatrazio poruke u inbox-u. 2020-06-26T17:33:31.564
+26-06-2020 17:33:31.568 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik blanusa je dobio inbox. 2020-06-26T17:33:31.568
+26-06-2020 17:45:41.381 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:45:41.381
+26-06-2020 17:45:42.865 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:45:42.865
+26-06-2020 17:45:42.868 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:45:42.868
+26-06-2020 17:47:31.313 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:47:31.313
+26-06-2020 17:47:31.336 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:47:31.336
+26-06-2020 17:47:31.339 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:47:31.339
+26-06-2020 17:50:31.472 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:50:31.472
+26-06-2020 17:50:31.494 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:50:31.494
+26-06-2020 17:50:31.498 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:50:31.498
+26-06-2020 17:54:11.663 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:54:11.663
+26-06-2020 17:54:11.669 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:54:11.669
+26-06-2020 17:54:11.674 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:54:11.674
+26-06-2020 17:54:38.673 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke koje je poslao. 2020-06-26T17:54:38.673
+26-06-2020 17:54:38.704 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je zatrazio poruke u inbox-u. 2020-06-26T17:54:38.704
+26-06-2020 17:54:38.706 INFO  [reactor-http-nio-1] c.e.m.controllers.MessagesController - Korisnik admin je dobio inbox. 2020-06-26T17:54:38.706

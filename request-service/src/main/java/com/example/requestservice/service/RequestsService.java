@@ -6,9 +6,13 @@ import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
 import com.example.requestservice.repository.RequestRepository;
 import com.example.requestservice.repository.UserRequestsRepository;
+import org.bouncycastle.cert.ocsp.Req;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +24,8 @@ public class RequestsService {
 
     @Autowired
     RequestRepository requestRepository;
+
+    Logger logger = LoggerFactory.getLogger(RequestsService.class);
 
     public Set<Request> getRequests(String username, RequestStatus type){
         UserRequests user_requests = userRequestsRepository.getRequestsByUsername(username);
@@ -38,13 +44,14 @@ public class RequestsService {
 
         UserRequests request = userRequestsRepository.getRequestsByUsername(username);
         if(request == null){
+            logger.error("Neuspjesno kreiranje zahtjeva za korisnika {}. {}", username, LocalDateTime.now());
             return false;
         }
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
             requests.add(new Request(requestDTO));
         }
-
+        logger.info("Korisnik {} uspjesno kreirao zahtjeve za vozila. {}", username, LocalDateTime.now());
         userRequestsRepository.save(request);
         return true;
     }

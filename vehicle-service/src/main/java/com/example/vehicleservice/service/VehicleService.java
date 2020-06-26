@@ -1,7 +1,10 @@
 package com.example.vehicleservice.service;
 
+import com.example.vehicleservice.controller.VehicleController;
 import com.example.vehicleservice.dto.SearchByCompanyUsernameDTO;
 import com.example.vehicleservice.dto.ShowVehicleDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -26,6 +31,8 @@ public class VehicleService {
 
     @Autowired
     VehicleRepository vehicleRepository;
+
+    Logger logger = LoggerFactory.getLogger(VehicleService.class);
 
     public Set<Vehicle> showVehicles() {
         return vehicleRepository.showVehicles();
@@ -46,12 +53,16 @@ public class VehicleService {
                 myReader.close();
             } catch (FileNotFoundException e) {
                 System.out.println("An error occurred.");
+
                 e.printStackTrace();
+                logger.warn("Fajl {} nije pronadjen {}", Long.toString(v.getId())+".txt", LocalDateTime.now());
             }
+            logger.info("Detalji za vozilo sa id-jem {} vraceni {}", v.getId(), LocalDateTime.now());
             return new ResponseEntity<>(vehicleDTO, HttpStatus.OK);
         }
         catch (Exception e){
             e.printStackTrace();
+            logger.error("Vozilo sad id-jem {} nije pronadjeno {}",id,LocalDateTime.now());
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
@@ -63,8 +74,10 @@ public class VehicleService {
             Vehicle v1 = vehicleRepository.save(v);
             String s = Long.toString(v1.getId())+".txt";
             makeDir(s, vehicle.getImages());
+            logger.info("Korisnik {} uspjesno kreirao vozilo {} sa id-jem {}. {}", username, v.getBrand(), v1.getId(), LocalDateTime.now());
             return new ResponseEntity<>(v1, HttpStatus.OK);
             } catch (Exception ex){
+               logger.error("Neuspjesno kreiranje vozila {} zatrazeno od korisnika {}. {}", vehicle.getBrand(),username, LocalDateTime.now() );
                 ex.printStackTrace();
                 return new ResponseEntity<>("Error", HttpStatus.BAD_REQUEST);
             }
@@ -91,10 +104,12 @@ public class VehicleService {
                 VehicleDTO vehicleDTO = new VehicleDTO(v);
                 retSet.add(vehicleDTO);
             }
+            logger.info("Korisnik {} dobio svoja vozila. {}", username, LocalDateTime.now());
             return new ResponseEntity<>(retSet, HttpStatus.OK);
         }
         catch (Exception e){
-            e.printStackTrace();
+
+            logger.error("Neuspjesno dobavljanje vozila za korisnika {}. {}", username, LocalDateTime.now());
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }

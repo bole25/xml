@@ -1,10 +1,14 @@
 package com.example.vehicleservice.service;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.example.vehicleservice.controller.SearchVehicleController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +24,8 @@ public class SearchVehicleService {
     @Autowired
     VehicleRepository vehicleRepository;
 
+    Logger logger = LoggerFactory.getLogger(SearchVehicleService.class);
+
     public ResponseEntity<Set<Vehicle>> searchVehicle(SearchDTO searchDTO){
         Set<Vehicle> vehicles = new HashSet<>();
         Set<Vehicle> retVehicles = new HashSet<>();
@@ -28,6 +34,7 @@ public class SearchVehicleService {
             Date startDate = searchDTO.getStartDate();
             Date endDate = searchDTO.getEndDate();
             if(startDate.after(endDate)){
+                logger.error("U pretrazi je pocetni datum posle krajnjeg. Pocetni datum: {} Krajnji datum: {}. {}", searchDTO.getStartDate(), searchDTO.getEndDate(), LocalDateTime.now());
                 return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
             }
             vehicles = vehicleRepository.searchVehicle(startDate, endDate);
@@ -44,9 +51,11 @@ public class SearchVehicleService {
                     retVehicles.add(v);
                 }
             }
+            logger.info("Uspjesna pretraga. {}", LocalDateTime.now());
             return new ResponseEntity<>(retVehicles, HttpStatus.OK);
         }
         catch (Exception ex) {
+            logger.error("Neuspjesna pretraga. {}", LocalDateTime.now());
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }

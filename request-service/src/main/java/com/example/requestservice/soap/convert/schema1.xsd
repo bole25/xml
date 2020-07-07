@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://localhost:8085/owner/requests/pending"
+           elementFormDefault="qualified"
+           targetNamespace="http://localhost:8085/owner/requests/pending">
+
+  <xs:complexType name="request">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="owner_username" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="requestStatus" minOccurs="0"/>
+      <xs:element name="vehicles" type="vehicle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vehicle">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="time_span" type="occupation" minOccurs="0"/>
+      <xs:element name="vehicle_id" type="xs:long" minOccurs="0"/>
+      <xs:element name="vehicle_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="occupation">
+    <xs:sequence>
+      <xs:element name="endDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="requestStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="RESERVED"/>
+      <xs:enumeration value="REJECTED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="getRequestsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="companyUsername"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getRequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="requests" type="tns:request" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

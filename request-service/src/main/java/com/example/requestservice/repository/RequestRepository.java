@@ -24,4 +24,5 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
     @Modifying
     @Query(value = "UPDATE requests.request SET status = '2' WHERE (id = ?1)", nativeQuery = true)
     void rejectRequest(Long id);
+
 }

@@ -4,6 +4,7 @@ import com.example.requestservice.dto.request_creation.RequestDTO;
 import com.example.requestservice.enums.RequestStatus;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
+import com.example.requestservice.model.Vehicle;
 import com.example.requestservice.repository.RequestRepository;
 import com.example.requestservice.repository.UserRequestsRepository;
 import org.bouncycastle.cert.ocsp.Req;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,6 +40,30 @@ public class RequestsService {
                 requests.add(r);
         }
         return requests;
+    }
+
+    public Set<Request> getFinished(String username, RequestStatus type){
+        UserRequests user_requests = userRequestsRepository.getRequestsByUsername(username);
+        if(user_requests==null){
+            return null;
+        }
+        Set<Request> requests = new HashSet<>();
+        for(Request r: user_requests.getRequests()){
+            if(r.getStatus() != RequestStatus.RESERVED)
+                break;
+            boolean add = true;
+            for(Vehicle v : r.getVehicles()){
+                if(!v.getTime_span().getEndDate().before(new Date())){
+                    add = false;
+                    break;
+                }
+            }
+            if(add){
+                requests.add(r);
+            }
+
+        }
+        return  requests;
     }
 
     public boolean createRequests(Set<RequestDTO> requestsDto, String username){

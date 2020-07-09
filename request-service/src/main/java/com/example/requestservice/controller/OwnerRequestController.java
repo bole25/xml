@@ -49,6 +49,17 @@ public class OwnerRequestController {
         return new ResponseEntity<>(upcoming, HttpStatus.OK);
     }
 
+    // Dobavljanje requestova koji su zavrseni
+    //TODO TESTIRATI
+    @GetMapping("/finished")
+    public ResponseEntity<Set<Request>> getFinishedRequests(@RequestHeader(value = "Username") String username){
+        Set<Request> finished = ownerRequestsService.getFinished(username);
+        if(finished==null){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(finished, HttpStatus.OK);
+    }
+
     @PutMapping("/approve/{id}")
     public ResponseEntity<String> approveRequest(@PathVariable String id,@RequestHeader(value = "Username") String username){
         Long long_id;

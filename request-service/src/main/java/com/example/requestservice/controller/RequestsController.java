@@ -63,6 +63,16 @@ public class RequestsController {
         return new ResponseEntity<>(rejected, HttpStatus.OK);
     }
 
+    //TODO TESTIRATI
+    @GetMapping("/finished")
+    public ResponseEntity<Set<Request>> getFinishedRequests(@RequestHeader(value = "Username") String username){
+        Set<Request> finished = requestsService.getFinished(username, RequestStatus.RESERVED);
+        if(finished==null){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(finished, HttpStatus.OK);
+    }
+
     //Check if logged in user is connected with the "receiver user", or in other words, do the share a request
     // that is "RESERVED"
     @GetMapping("areConnected/{receiver}")

@@ -1,5 +1,6 @@
 package com.example.loginservice.controllers;
 
+import com.example.loginservice.enumeration.RoleEnum;
 import com.example.loginservice.model.UserCredentials;
 import com.example.loginservice.model.UserPermission;
 import com.example.loginservice.repository.LoginCredentialsRepository;
@@ -17,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,6 +49,7 @@ public class ManageCredentialsController {
             return new ResponseEntity<>(HttpStatus.ALREADY_REPORTED);
         }
     }
+
     @GetMapping("havePermission/{perm}")
     protected ResponseEntity<Boolean> getPermission(@PathVariable String perm,
             @RequestHeader(value = "Username") String sender){
@@ -67,5 +70,21 @@ public class ManageCredentialsController {
     	}
     	
     	return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+
+    
+    @PostMapping("/addCompany")
+    protected ResponseEntity<Void> addCompany(@RequestBody String encodedUser){
+    	
+    	Gson gson = new Gson();
+    	Type type = new TypeToken<UserCredentials>(){}.getType();
+    	UserCredentials credentials = gson.fromJson(encodedUser, type);
+    	credentials.setRole(RoleEnum.ROLE_COMPANY);
+        boolean added = credentialsService.addCompany(credentials);
+
+        if(added){
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>(HttpStatus.ALREADY_REPORTED);
+        }
     }
 }

@@ -68,6 +68,9 @@ public class VehicleService {
     }
 
     public ResponseEntity<?> createVehicle(VehicleDTO vehicle, String username){
+        if(vehicleRepository.numberOfVehicles(username) > 2){
+            return new ResponseEntity<>("Ne moze se kreirati vise od 3 vozila", HttpStatus.NOT_ACCEPTABLE);
+        }
         try {
             vehicle.setCompanyUsername(username);
             Vehicle v = new Vehicle(vehicle);

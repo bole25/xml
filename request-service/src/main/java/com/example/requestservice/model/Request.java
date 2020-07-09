@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -40,6 +41,9 @@ public class Request {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @XmlElement
     private Set<Vehicle> vehicles;
+
+    @Column
+    private Date created = new Date();
 
     public Request(RequestDTO request){
         this.status = RequestStatus.PENDING;

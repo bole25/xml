@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -88,5 +89,26 @@ public class RequestsService {
         if (count > 0)
             return Boolean.TRUE;
         return Boolean.FALSE;
+    }
+
+
+    // Funkcija koja odbija zahtjev koji nije prihvacen nakon 24h od kreiranja
+    public void removeAfter24h(){
+        Set<Request> requests = requestRepository.getAllPendingRequests();
+        for(Request r : requests){
+            Date toCompare = this.addHoursToJavaUtilDate(r.getCreated(), 24);
+            if(toCompare.before(new Date())){
+                r.setStatus(RequestStatus.REJECTED);
+                requestRepository.save(r);
+            }
+        }
+    }
+
+
+    private Date addHoursToJavaUtilDate(Date date, int hours) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.HOUR_OF_DAY, 24);
+        return calendar.getTime();
     }
 }

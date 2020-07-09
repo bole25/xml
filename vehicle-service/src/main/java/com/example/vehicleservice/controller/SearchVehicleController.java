@@ -31,4 +31,11 @@ public class SearchVehicleController {
         System.out.println(searchDTO);
         return searchVehicleService.searchVehicle(searchDTO);
     }
+    @PostMapping("/advanced")
+    public ResponseEntity<Set<Vehicle>> searchVehiclesAdvanced(@RequestBody SearchDTO searchDTO){
+        logger.warn("Zatrazena pretraga za grad {}. {}", searchDTO.getPlace(), LocalDateTime.now());
+        System.out.println(searchDTO);
+        return searchVehicleService.advancedSearchVehicle(searchDTO);
+    }
+    
 }

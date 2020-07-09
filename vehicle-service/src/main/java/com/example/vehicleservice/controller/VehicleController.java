@@ -57,6 +57,10 @@ public class VehicleController {
 
     @GetMapping("/user")
     public ResponseEntity<Set<VehicleDTO>> getMyCars(@RequestHeader(value = "Username") String username){
+    	boolean success = vehicleService.havePermission(username);
+    	if(!success) {
+    		return new ResponseEntity<>(null,HttpStatus.UNAUTHORIZED);
+    	}
         logger.info("Korisnik {} zatrazio prikaz svojih vozila. Vrijeme ", username, LocalDateTime.now());
         return vehicleService.getMyCars(username);
     }

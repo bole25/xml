@@ -35,6 +35,10 @@ public class OwnerRequestController {
 
     @GetMapping("/upcoming")
     public ResponseEntity<Set<Request>> getUpcomingRequests(@RequestHeader(value = "Username") String username){
+    	boolean correctPermission = ownerRequestsService.checkPermission(username);
+    	if(!correctPermission) {
+    		return new ResponseEntity<>(null,HttpStatus.UNAUTHORIZED);
+    	}
         logger.info("Korisnik {} je zatrazio zahtjeve koje je odobrio za njegova vozila. Vrijeme {}", username, LocalDateTime.now());
         Set<Request> upcoming = ownerRequestsService.getUpcoming(username);
         if(upcoming==null){

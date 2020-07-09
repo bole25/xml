@@ -38,6 +38,10 @@ public class MessagesController {
 
     @GetMapping("/received")
     public ResponseEntity<Set<Message>> getReceivedMessages(@RequestHeader(value = "Username") String username){
+    	boolean correctPermission = messagesService.havePermission(username);
+    	if(!correctPermission) {
+    		return new ResponseEntity<>(null,HttpStatus.UNAUTHORIZED);
+    	}
         logger.info("Korisnik {} je zatrazio poruke u inbox-u. {}", username, LocalDateTime.now());
         Set<Message> received_messages = messagesService.getReceivedMessages(username);
         if(received_messages == null){

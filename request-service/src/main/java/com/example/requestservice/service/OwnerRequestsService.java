@@ -1,6 +1,7 @@
 package com.example.requestservice.service;
 
 import com.example.requestservice.dto.VehicleReservationDTO;
+import com.example.requestservice.feignClient.LoginClient;
 import com.example.requestservice.feignClient.VehicleClient;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.Vehicle;
@@ -25,6 +26,9 @@ public class OwnerRequestsService {
     @Autowired
     private VehicleClient vehicleClient;
 
+    @Autowired
+    private LoginClient loginClient;
+    
     public Set<Request> getPending(String username){
         return requestRepository.getOwnersPending(username);
     }
@@ -83,4 +87,10 @@ public class OwnerRequestsService {
         requestRepository.rejectRequest(id);
         return true;
     }
+
+    @Transactional
+	public boolean checkPermission(String username) {
+    	Boolean connected = loginClient.checkPerm(username,"2");
+		return connected;
+	}
 }

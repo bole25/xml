@@ -1,6 +1,7 @@
 package com.example.messagingservice.services;
 
 import com.example.messagingservice.dto.MessageDTO;
+import com.example.messagingservice.feignClinet.LoginClient;
 import com.example.messagingservice.feignClinet.RequestClient;
 import com.example.messagingservice.model.Message;
 import com.example.messagingservice.model.UserMessages;
@@ -21,6 +22,9 @@ public class MessagesService {
     @Autowired
     private UserMessagesRepository userMessagesRepository;
 
+    @Autowired
+    private LoginClient loginClient;
+    
     @Autowired
     private RequestClient requestClient;
 
@@ -58,4 +62,9 @@ public class MessagesService {
 
         return true;
     }
+    @Transactional
+	public boolean havePermission(String username) {
+    	Boolean connected = loginClient.checkPerm(username,"3");
+		return connected;
+	}
 }

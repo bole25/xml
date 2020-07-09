@@ -1,5 +1,6 @@
 package com.example.vehicleservice.service;
 
+
 import com.example.vehicleservice.controller.VehicleController;
 import com.example.vehicleservice.dto.SearchByCompanyUsernameDTO;
 import com.example.vehicleservice.dto.ShowVehicleDTO;
@@ -9,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.vehicleservice.dto.VehicleDTO;
+import com.example.vehicleservice.feignclient.LoginClient;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,6 +35,9 @@ public class VehicleService {
 
     @Autowired
     VehicleRepository vehicleRepository;
+    
+    @Autowired
+    LoginClient loginClient;
 
     Logger logger = LoggerFactory.getLogger(VehicleService.class);
 
@@ -148,8 +155,11 @@ public class VehicleService {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
-
     }
-
+    
+    @Transactional
+	public boolean havePermission(String username) {
+    	Boolean connected = loginClient.checkPerm(username,"1");
+		return connected;
+	}
 }

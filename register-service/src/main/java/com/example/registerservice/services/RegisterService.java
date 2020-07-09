@@ -20,4 +20,11 @@ public class RegisterService {
 		loginClient.update(encodedJSON);
 		return true;
 	}
+	
+	public boolean addCompany(UserDTO user) {
+		Gson gson = new Gson();
+		String encodedJSON = gson.toJson(user);
+		loginClient.addCompany(encodedJSON);
+		return true;
+	}
 }

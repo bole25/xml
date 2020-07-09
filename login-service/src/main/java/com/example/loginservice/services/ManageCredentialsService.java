@@ -24,4 +24,13 @@ public class ManageCredentialsService {
         System.out.println("usao");
         return true;
     }
+    public boolean addCompany(UserCredentials credentials){
+
+    	// izmeni da bude promenljiva rola
+        credentials.setRole(RoleEnum.ROLE_COMPANY);
+        credentials.setActive(Boolean.TRUE);
+        credentials = credentialsRepository.save(credentials);
+
+        return true;
+    }
 }

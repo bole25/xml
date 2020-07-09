@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.registerservice.dto.UserDTO;
+import com.example.registerservice.enumeration.RoleEnum;
 import com.example.registerservice.model.RegistrationRequest;
 import com.example.registerservice.model.Validation;
 import com.example.registerservice.services.RegisterService;
@@ -50,6 +51,25 @@ public class RegisterController {
         }
         
     }
+    
+    @PostMapping("/company")
+    public ResponseEntity<String> addCompany(@RequestBody UserDTO user){
+    	if(user == null) {
+    		return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
+    	}
+    	user.setActive(true);
+    	user.setRole(RoleEnum.COMPANY);
+    	boolean success = registerService.addCompany(user);
+    	
+        if(success){
+            return new ResponseEntity<>("", HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
+        }
+    }
+    
+    
+    
     
     
 }

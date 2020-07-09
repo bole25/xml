@@ -8,5 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface LoginClient {
     @PostMapping(value = "/addCredentials")
     void update(@RequestBody String encodedRequests);
+    
+    @PostMapping(value = "/addCompany")
+    void addCompany(@RequestBody String encodedRequests);
 	
 }

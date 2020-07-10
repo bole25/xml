@@ -162,4 +162,16 @@ public class VehicleService {
     	Boolean connected = loginClient.checkPerm(username,"1");
 		return connected;
 	}
+
+	public ResponseEntity<String> addDiscountToCar(Long id, Long discount, Long howmany) {
+		Vehicle vehicle = vehicleRepository.getOne(id);
+		if(vehicle == null) {
+			return new ResponseEntity<String>("",HttpStatus.BAD_REQUEST);
+		}
+		vehicle.setDiscount(Integer.parseInt(discount.toString()));
+		vehicle.setDiscountDays(Integer.parseInt(howmany.toString()));
+		vehicle = vehicleRepository.save(vehicle);
+		
+		return new ResponseEntity<String>("",HttpStatus.OK);
+	}
 }

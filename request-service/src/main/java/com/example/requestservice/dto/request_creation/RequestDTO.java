@@ -14,4 +14,6 @@ public class RequestDTO {
     private String owner_username;
 
     private Set<VehicleDTO> vehicles;
+    
+    private Double price;
 }

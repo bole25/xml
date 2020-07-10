@@ -54,6 +54,10 @@ public class ManageCredentialsController {
     protected ResponseEntity<Boolean> getPermission(@PathVariable String perm,
             @RequestHeader(value = "Username") String sender){
     	UserCredentials user = credentialsRepository.findByUsername(sender);
+    	if(user.getRole() != RoleEnum.ROLE_CLIENT) {
+    		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    	}
+    	
     	UserPermission permission = permRepository.findByUserId(user.getId());
     	if(perm.equals("1")) {
     		if(!permission.getVehiclePerm()) {
@@ -70,7 +74,7 @@ public class ManageCredentialsController {
     	}
     	
     	return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-
+    }
     
     @PostMapping("/addCompany")
     protected ResponseEntity<Void> addCompany(@RequestBody String encodedUser){

@@ -1,7 +1,9 @@
 package com.example.requestservice.service;
 
 import com.example.requestservice.dto.request_creation.RequestDTO;
+import com.example.requestservice.dto.request_creation.VehicleDTO;
 import com.example.requestservice.enums.RequestStatus;
+import com.example.requestservice.feignClient.VehicleClient;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
 import com.example.requestservice.model.Vehicle;
@@ -27,6 +29,9 @@ public class RequestsService {
 
     @Autowired
     RequestRepository requestRepository;
+    
+    @Autowired
+    VehicleClient vClient;
 
     Logger logger = LoggerFactory.getLogger(RequestsService.class);
 
@@ -76,6 +81,17 @@ public class RequestsService {
         }
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
+        	for(VehicleDTO v : requestDTO.getVehicles()) {
+        		String result = vClient.getDiscountByVehicle(v.getVehicle_id());
+        		String[] array = result.split(",");
+        		long diff = v.getTime_span().getEndDate().getTime() - v.getTime_span().getStartDate().getTime();
+    			int daysCount = (int) (diff / 86400000);
+    			Double price = Double.parseDouble(array[2]) * daysCount;
+        		if(!array[0].equals("null") && !array[1].equals("null") && daysCount >= Integer.parseInt(array[1])) {
+        			price -= ((double) Integer.parseInt(array[0]) / 100 * price);
+        		}
+        		requestDTO.setPrice(price);
+        	}
             requests.add(new Request(requestDTO));
         }
         logger.info("Korisnik {} uspjesno kreirao zahtjeve za vozila. {}", username, LocalDateTime.now());

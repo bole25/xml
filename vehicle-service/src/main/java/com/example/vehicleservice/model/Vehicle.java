@@ -32,6 +32,12 @@ public class Vehicle {
 	private String fuel_type;
 
 	@Column()
+	private Integer discount;
+	
+	@Column()
+	private Integer discountDays;
+	
+	@Column()
 	private String transmission;
 
 	@Column()

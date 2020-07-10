@@ -3,10 +3,12 @@ package com.example.rentservice.service;
 import com.example.rentservice.DTO.PurchaseCartDto;
 import com.example.rentservice.DTO.request_creation.OccupationDTO;
 import com.example.rentservice.DTO.request_creation.RequestDTO;
+import com.example.rentservice.DTO.request_creation.RequestsDTO;
 import com.example.rentservice.DTO.request_creation.VehicleDTO;
 import com.example.rentservice.feignClient.RequestClient;
 import com.example.rentservice.model.Cart;
 import com.example.rentservice.model.CartItem;
+import com.example.rentservice.rabbit.QueueProducer;
 import com.example.rentservice.repository.CartRepository;
 
 import com.google.gson.Gson;
@@ -27,6 +29,9 @@ public class CreateRequestsService {
     @Autowired
     private RequestClient requestClient;
 
+    @Autowired
+    private QueueProducer queueProducer;
+
     public boolean createRequests(PurchaseCartDto bundleQuery, String username){
 
         Cart cart = cartRepository.getCartByUsername(username);
@@ -43,7 +48,8 @@ public class CreateRequestsService {
             owner_vehicles.get(ci.getOwner_username()).add(new VehicleDTO(ci.getVehicle_name(),ci.getVehicle_id(),occupation));
         }
 
-        Set<RequestDTO> requests = new HashSet<>();
+        RequestsDTO requests = new RequestsDTO();
+        requests.setUsername(username);
 
         for(String owner_username: bundleQuery.getBundleQuery().keySet()){
             if(bundleQuery.getBundleQuery().get(owner_username).equals("True")){
@@ -65,10 +71,16 @@ public class CreateRequestsService {
             }
         }
 
-        Gson gson = new Gson();
+        /*Gson gson = new Gson();
         String encodedJSON = gson.toJson(requests);
-        requestClient.update(encodedJSON, username);
+        requestClient.update(encodedJSON, username);*/
 
+        try {
+            queueProducer.produce(requests);
+        }catch (Exception e){
+            System.out.println("Uhvatio gresku pri rabbitmq-u");
+            e.printStackTrace();
+        }
         cart.setItems(new HashSet<>());
         cartRepository.save(cart);
 

@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfiguration {
 
-    private static final String LISTENER_METHOD = "receiveMessage";
+   /* private static final String LISTENER_METHOD = "receiveMessage";
 
     @Value("${queue.name}")
     private String queueName;
@@ -51,5 +51,5 @@ public class RabbitConfiguration {
     @Bean
     MessageListenerAdapter listenerAdapter(QueueConsumer consumer){
         return new MessageListenerAdapter(consumer, LISTENER_METHOD);
-    }
+    }*/
 }

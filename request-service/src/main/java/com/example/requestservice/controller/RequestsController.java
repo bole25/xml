@@ -1,6 +1,7 @@
 package com.example.requestservice.controller;
 
 import com.example.requestservice.dto.request_creation.RequestDTO;
+import com.example.requestservice.dto.request_creation.RequestsDTO;
 import com.example.requestservice.enums.RequestStatus;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.service.RequestsService;
@@ -89,8 +90,8 @@ public class RequestsController {
     public ResponseEntity<?> createRequests(@RequestBody String encodedRequests, @RequestHeader(value = "Username") String username){
         Gson gson = new Gson();
         Type type = new TypeToken<HashSet<RequestDTO>>(){}.getType();
-        Set<RequestDTO> requests = gson.fromJson(encodedRequests,type);
-        requestsService.createRequests(requests, username);
+        RequestsDTO requests = gson.fromJson(encodedRequests,RequestsDTO.class);
+        requestsService.createRequests(requests.getRequests(), username);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

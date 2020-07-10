@@ -6,3 +6,5 @@ INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `passwor
 INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('1', b'1',b'1',b'1','1');
 INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('2', b'1',b'1',b'1','3');
 INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('3', b'1',b'1',b'1','4');
+INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('4', b'1',b'1',b'1','2');
+INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('5', b'1',b'1',b'1','5');

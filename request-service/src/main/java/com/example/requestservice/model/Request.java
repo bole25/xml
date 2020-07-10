@@ -34,6 +34,9 @@ public class Request {
     @XmlElement
     private String owner_username;
 
+    @Column(nullable = true)
+    private Double price;
+    
     @Column(nullable = false)
     @XmlElement
     private RequestStatus status;
@@ -52,5 +55,6 @@ public class Request {
         for(VehicleDTO vehicle:request.getVehicles()){
             vehicles.add(new Vehicle(vehicle));
         }
+        this.price = request.getPrice();
     }
 }

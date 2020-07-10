@@ -3,6 +3,7 @@ package com.example.vehicleservice.controller;
 import com.example.vehicleservice.dto.ShowVehicleDTO;
 import com.example.vehicleservice.dto.VehicleDTO;
 import com.example.vehicleservice.model.Vehicle;
+import com.example.vehicleservice.repository.VehicleRepository;
 import com.example.vehicleservice.service.VehicleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -22,6 +24,9 @@ public class VehicleController {
 
     @Autowired
     VehicleService vehicleService;
+    
+    @Autowired
+    VehicleRepository vehicleRepo;
 
     Logger logger = LoggerFactory.getLogger(VehicleController.class);
 
@@ -63,6 +68,27 @@ public class VehicleController {
     	}
         logger.info("Korisnik {} zatrazio prikaz svojih vozila. Vrijeme ", username, LocalDateTime.now());
         return vehicleService.getMyCars(username);
+    }
+    
+    @GetMapping("/addDiscountToCar/{id}/{discount}/{howmany}")
+    public ResponseEntity<String> addDiscountToCar(@PathVariable("id") Long id,@PathVariable("discount") Long discount,@PathVariable("howmany") Long howmany){
+    	return vehicleService.addDiscountToCar(id,discount,howmany);
+    }
+    
+    @GetMapping("/getDiscountByVehicle/{id}")
+    public ResponseEntity<String> getDiscountByVehicle(@PathVariable("id") Long id){
+    	Vehicle vehicle = null;
+    	List<Vehicle> vehicles = vehicleRepo.findAll();
+    	for(Vehicle v : vehicles) {
+    		if(v.getId() == id) {
+    			vehicle = v;
+    		}
+    	}
+    	if(vehicle == null) {
+    		return new ResponseEntity<String>("",HttpStatus.OK);
+    	}
+    	String result = vehicle.getDiscount()+","+vehicle.getDiscountDays()+","+vehicle.getPrice();
+    	return new ResponseEntity<String>(result,HttpStatus.OK);
     }
 
 

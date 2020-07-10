@@ -15,12 +15,22 @@ public class ManageCredentialsService {
 
     public boolean addCredentials(UserCredentials credentials){
 
+    	// izmeni da bude promenljiva rola
         credentials.setRole(RoleEnum.ROLE_CLIENT);
         credentials.setActive(Boolean.TRUE);
         UserCredentials returned_user = credentialsRepository.findByUsername(credentials.getUsername());
         credentials = credentialsRepository.save(credentials);
 
         System.out.println("usao");
+        return true;
+    }
+    public boolean addCompany(UserCredentials credentials){
+
+    	// izmeni da bude promenljiva rola
+        credentials.setRole(RoleEnum.ROLE_COMPANY);
+        credentials.setActive(Boolean.TRUE);
+        credentials = credentialsRepository.save(credentials);
+
         return true;
     }
 }

@@ -4,11 +4,18 @@ import com.example.requestservice.dto.request_creation.RequestDTO;
 import com.example.requestservice.enums.RequestStatus;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
+import com.example.requestservice.model.Vehicle;
 import com.example.requestservice.repository.RequestRepository;
 import com.example.requestservice.repository.UserRequestsRepository;
+import org.bouncycastle.cert.ocsp.Req;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +27,8 @@ public class RequestsService {
 
     @Autowired
     RequestRepository requestRepository;
+
+    Logger logger = LoggerFactory.getLogger(RequestsService.class);
 
     public Set<Request> getRequests(String username, RequestStatus type){
         UserRequests user_requests = userRequestsRepository.getRequestsByUsername(username);
@@ -34,17 +43,42 @@ public class RequestsService {
         return requests;
     }
 
+    public Set<Request> getFinished(String username, RequestStatus type){
+        UserRequests user_requests = userRequestsRepository.getRequestsByUsername(username);
+        if(user_requests==null){
+            return null;
+        }
+        Set<Request> requests = new HashSet<>();
+        for(Request r: user_requests.getRequests()){
+            if(r.getStatus() != RequestStatus.RESERVED)
+                break;
+            boolean add = true;
+            for(Vehicle v : r.getVehicles()){
+                if(!v.getTime_span().getEndDate().before(new Date())){
+                    add = false;
+                    break;
+                }
+            }
+            if(add){
+                requests.add(r);
+            }
+
+        }
+        return  requests;
+    }
+
     public boolean createRequests(Set<RequestDTO> requestsDto, String username){
 
         UserRequests request = userRequestsRepository.getRequestsByUsername(username);
         if(request == null){
+            logger.error("Neuspjesno kreiranje zahtjeva za korisnika {}. {}", username, LocalDateTime.now());
             return false;
         }
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
             requests.add(new Request(requestDTO));
         }
-
+        logger.info("Korisnik {} uspjesno kreirao zahtjeve za vozila. {}", username, LocalDateTime.now());
         userRequestsRepository.save(request);
         return true;
     }
@@ -55,5 +89,26 @@ public class RequestsService {
         if (count > 0)
             return Boolean.TRUE;
         return Boolean.FALSE;
+    }
+
+
+    // Funkcija koja odbija zahtjev koji nije prihvacen nakon 24h od kreiranja
+    public void removeAfter24h(){
+        Set<Request> requests = requestRepository.getAllPendingRequests();
+        for(Request r : requests){
+            Date toCompare = this.addHoursToJavaUtilDate(r.getCreated(), 24);
+            if(toCompare.before(new Date())){
+                r.setStatus(RequestStatus.REJECTED);
+                requestRepository.save(r);
+            }
+        }
+    }
+
+
+    private Date addHoursToJavaUtilDate(Date date, int hours) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.HOUR_OF_DAY, 24);
+        return calendar.getTime();
     }
 }

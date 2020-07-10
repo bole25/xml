@@ -5,17 +5,22 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.example.adminservice.controller.BrandController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GetInfoFromLoginService {
+
+    Logger logger = LoggerFactory.getLogger(GetInfoFromLoginService.class);
 
 	public String getData(String path) {
 		
 		String inputLine = "";
 		
         try {
-            URL url = new URL("http://login-service:8089"+path);
+            URL url = new URL("http://localhost:8089"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 

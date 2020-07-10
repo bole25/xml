@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 @Repository
@@ -24,4 +25,8 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
     @Modifying
     @Query(value = "UPDATE requests.request SET status = '2' WHERE (id = ?1)", nativeQuery = true)
     void rejectRequest(Long id);
+
+    @Query(value = "SELECT * FROM requests.request WHERE status = 0", nativeQuery = true)
+    Set<Request> getAllPendingRequests();
+
 }

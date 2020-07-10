@@ -1,15 +1,19 @@
 package com.example.requestservice.service;
 
 import com.example.requestservice.dto.VehicleReservationDTO;
+import com.example.requestservice.feignClient.LoginClient;
 import com.example.requestservice.feignClient.VehicleClient;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.Vehicle;
 import com.example.requestservice.repository.RequestRepository;
 import com.google.gson.Gson;
+import org.bouncycastle.cert.ocsp.Req;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -22,12 +26,33 @@ public class OwnerRequestsService {
     @Autowired
     private VehicleClient vehicleClient;
 
+    @Autowired
+    private LoginClient loginClient;
+    
     public Set<Request> getPending(String username){
         return requestRepository.getOwnersPending(username);
     }
 
     public Set<Request> getUpcoming(String username){
         return requestRepository.getOwnersUpcoming(username);
+    }
+
+    public Set<Request> getFinished(String username){
+        Set<Request> approved = requestRepository.getOwnersUpcoming(username);
+        Set<Request> finished = new HashSet<>();
+        for(Request request : approved){
+            boolean add = true;
+            for(Vehicle v: request.getVehicles()){
+                if(!v.getTime_span().getEndDate().before(new Date())){
+                    add = false;
+                    break;
+                }
+            }
+            if(add){
+                finished.add(request);
+            }
+        }
+        return finished;
     }
 
     @Transactional
@@ -62,4 +87,10 @@ public class OwnerRequestsService {
         requestRepository.rejectRequest(id);
         return true;
     }
+
+    @Transactional
+	public boolean checkPermission(String username) {
+    	Boolean connected = loginClient.checkPerm(username,"2");
+		return connected;
+	}
 }

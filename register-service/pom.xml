@@ -103,7 +103,21 @@
 			<version>2.1.1</version>
 			<scope>test</scope>
 		</dependency>
-		
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.19.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.19.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>

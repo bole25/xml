@@ -1,6 +1,17 @@
 version : '3.5'
-
 services:
+        rabbitmq:
+                image: rabbitmq
+                container_name: rabitMQContainer
+                hostname: rabbitmq
+                networks:
+                        service-discovery-network:
+                                aliases:
+                                        - rabbitmq
+                ports:
+                    - 5672:5672
+                volumes:
+                        - rabbitmq_volume:/var/lib/rabbit
         database:
                 image: mysql
                 container_name: mysqlDatabase
@@ -23,6 +34,17 @@ services:
                         service-discovery-network:
                                 aliases:
                                         - zuul-gateway
+                environment:
+                        LOGIN_ALIAS: login-service
+                        ADMIN_ALIAS: admin-service
+                        MESSAGING_ALIAS: messaging-service
+                        GPS_ALIAS: gps-service
+                        REGISTER_ALIAS: register-service
+                        CART_ALIAS: cart-service
+                        REPORT_ALIAS: report-service
+                        REQUEST_ALIAS: request-service
+                        SEARCH_ALIAS: search-service
+                        VEHICLE_ALIAS: vehicle-service
                 ports:
                         - 8079:8079
                 volumes:
@@ -68,12 +90,18 @@ services:
                  image: messaging-service-img
                  container_name: messagingServiceContainer
                  hostname: messaging-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
+                         DATABASE_SCHEME: messaging_db
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - messaging-service
                  volumes:
                         - $HOME/.m2:/root/.m2
+                 depends_on:
+                        - database
  
         gps-service:
                  build: ./gps-service
@@ -108,6 +136,7 @@ services:
                          DATABASE_PASSWORD: password
                          DATABASE_DOMAIN: database
                          DATABASE_SCHEMA: cartdb
+                         RABBITMQ_NETWORK: rabbitmq
                  networks:
                          service-discovery-network:
                                  aliases:
@@ -123,25 +152,39 @@ services:
                  image: report-service-img
                  container_name: reportServiceContainer
                  hostname: report-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
+                         DATABASE_SCHEME: reports
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - report-service
                  volumes:
                         - $HOME/.m2:/root/.m2
+                 depends_on:
+                        - database
 
         request-service:
                  build: ./request-service
                  image: request-service-img
                  container_name: requestServiceContainer
                  hostname: request-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
+                         DATABASE_SCHEME: requests
+                         RABBITMQ_NETWORK: rabbitmq
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - request-service
                  volumes:
                         - $HOME/.m2:/root/.m2
-
+                 depends_on:
+                        - database
+                        - rabbitmq
+                        
         search-service:
                  build: ./search-service
                  image: search-service-img
@@ -159,6 +202,8 @@ services:
                  image: vehicle-service-img
                  container_name: vehicleServiceContainer
                  hostname: vehicle-service
+                 ports: 
+                        - "8083:8083"
                  environment:
                          DATABASE_PASSWORD: password
                          DATABASE_DOMAIN: database
@@ -179,3 +224,4 @@ networks:
 
 volumes:
         mysqldatabase:
+        rabbitmq_volume:

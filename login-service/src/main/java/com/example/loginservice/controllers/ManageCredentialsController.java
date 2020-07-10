@@ -52,25 +52,25 @@ public class ManageCredentialsController {
 
     @GetMapping("havePermission/{perm}")
     protected ResponseEntity<Boolean> getPermission(@PathVariable String perm,
-            @RequestHeader(value = "Username") String sender){
-    	UserCredentials user = credentialsRepository.findByUsername(sender);
-    	UserPermission permission = permRepository.findByUserId(user.getId());
-    	if(perm.equals("1")) {
-    		if(!permission.getVehiclePerm()) {
-    			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
-    		} 
-    	}else if(perm.equals("2")) {
-    		if(!permission.getRequestPerm()) {
-    			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
-    		}
-    	}else {
-    		if(!permission.getOtherPerm()) {
-    			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
-    		}
-    	}
-    	
-    	return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+            @RequestHeader(value = "Username") String sender) {
+        UserCredentials user = credentialsRepository.findByUsername(sender);
+        UserPermission permission = permRepository.findByUserId(user.getId());
+        if (perm.equals("1")) {
+            if (!permission.getVehiclePerm()) {
+                return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+            }
+        } else if (perm.equals("2")) {
+            if (!permission.getRequestPerm()) {
+                return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+            }
+        } else {
+            if (!permission.getOtherPerm()) {
+                return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+            }
+        }
 
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+    }
     
     @PostMapping("/addCompany")
     protected ResponseEntity<Void> addCompany(@RequestBody String encodedUser){

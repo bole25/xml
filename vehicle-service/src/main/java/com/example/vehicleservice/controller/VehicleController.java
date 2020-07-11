@@ -92,12 +92,17 @@ public class VehicleController {
     }
 
     @GetMapping("/getMostKmCar")
-    public ResponseEntity<VehicleDTO> getMostKmCar(){
-    	return vehicleService.getMostKmCar();
+    public ResponseEntity<VehicleDTO> getMostKmCar(@RequestHeader(value = "Username") String username){
+    	return vehicleService.getMostKmCar(username);
     }
     
     @GetMapping("/getMostPriceCar")
-    public ResponseEntity<VehicleDTO> getMostPriceCar(){
-    	return vehicleService.getMostPriceCar();
+    public ResponseEntity<VehicleDTO> getMostPriceCar(@RequestHeader(value = "Username") String username){
+    	return vehicleService.getMostPriceCar(username);
+    }
+    
+    @GetMapping("/updateKm/{id}/{km}")
+    public ResponseEntity<Boolean> updateKm(@PathVariable("id") Long id,@PathVariable("km") Integer km){
+    	return vehicleService.updateKm(id,km);
     }
 }

@@ -11,4 +11,7 @@ public interface LoginClient {
 
     @GetMapping(value = "/user/role/{username}")
     String getRole(@PathVariable("username") String username);
+	
+    @GetMapping(value = "/getUserType", headers = {"Username={sender}"})
+    Boolean getUserType(@PathVariable("sender") String sender);
 }

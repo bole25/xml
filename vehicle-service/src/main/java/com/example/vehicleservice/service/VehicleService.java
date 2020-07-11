@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -173,5 +174,41 @@ public class VehicleService {
 		vehicle = vehicleRepository.save(vehicle);
 		
 		return new ResponseEntity<String>("",HttpStatus.OK);
+	}
+
+	public ResponseEntity<VehicleDTO> getMostKmCar() {
+		List<Vehicle> vehicles = vehicleRepository.findAll();
+		if(vehicles == null) {
+			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+		}
+		Vehicle best = vehicles.get(0);
+		for(Vehicle v : vehicles) {
+			if(v.getMileage() > best.getMileage()) {
+				best = v;
+			}
+		}
+		VehicleDTO vDTO = new VehicleDTO();
+		vDTO.setId(best.getId());
+		vDTO.setBrand(best.getBrand());
+		vDTO.setModel(best.getModel());
+		return new ResponseEntity<VehicleDTO>(vDTO,HttpStatus.OK);
+	}
+
+	public ResponseEntity<VehicleDTO> getMostPriceCar() {
+		List<Vehicle> vehicles = vehicleRepository.findAll();
+		if(vehicles == null) {
+			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+		}
+		Vehicle best = vehicles.get(0);
+		for(Vehicle v : vehicles) {
+			if(v.getPrice() > best.getPrice()) {
+				best = v;
+			}
+		}
+		VehicleDTO vDTO = new VehicleDTO();
+		vDTO.setId(best.getId());
+		vDTO.setBrand(best.getBrand());
+		vDTO.setModel(best.getModel());
+		return new ResponseEntity<VehicleDTO>(vDTO,HttpStatus.OK);
 	}
 }

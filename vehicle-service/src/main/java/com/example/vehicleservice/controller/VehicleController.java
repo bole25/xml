@@ -91,5 +91,13 @@ public class VehicleController {
     	return new ResponseEntity<String>(result,HttpStatus.OK);
     }
 
-
+    @GetMapping("/getMostKmCar")
+    public ResponseEntity<VehicleDTO> getMostKmCar(){
+    	return vehicleService.getMostKmCar();
+    }
+    
+    @GetMapping("/getMostPriceCar")
+    public ResponseEntity<VehicleDTO> getMostPriceCar(){
+    	return vehicleService.getMostPriceCar();
+    }
 }

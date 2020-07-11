@@ -1,9 +1,11 @@
 package com.example.requestservice.service;
 
+import com.example.requestservice.dto.RejectRequestsDTO;
 import com.example.requestservice.dto.request_creation.RequestDTO;
 import com.example.requestservice.dto.request_creation.VehicleDTO;
 import com.example.requestservice.enums.RequestStatus;
 import com.example.requestservice.feignClient.VehicleClient;
+import com.example.requestservice.model.Occupation;
 import com.example.requestservice.model.Request;
 import com.example.requestservice.model.UserRequests;
 import com.example.requestservice.model.Vehicle;
@@ -81,17 +83,18 @@ public class RequestsService {
         }
         Set<Request> requests = request.getRequests();
         for(RequestDTO requestDTO: requestsDto){
+            Double price = 0.0;
         	for(VehicleDTO v : requestDTO.getVehicles()) {
         		String result = vClient.getDiscountByVehicle(v.getVehicle_id());
         		String[] array = result.split(",");
         		long diff = v.getTime_span().getEndDate().getTime() - v.getTime_span().getStartDate().getTime();
     			int daysCount = (int) (diff / 86400000);
-    			Double price = Double.parseDouble(array[2]) * daysCount;
+    			price += Double.parseDouble(array[2]) * daysCount;
         		if(!array[0].equals("null") && !array[1].equals("null") && daysCount >= Integer.parseInt(array[1])) {
         			price -= ((double) Integer.parseInt(array[0]) / 100 * price);
         		}
-        		requestDTO.setPrice(price);
         	}
+            requestDTO.setPrice(price);
             requests.add(new Request(requestDTO));
         }
         logger.info("Korisnik {} uspjesno kreirao zahtjeve za vozila. {}", username, LocalDateTime.now());
@@ -107,7 +110,32 @@ public class RequestsService {
         return Boolean.FALSE;
     }
 
+    public void automaticallyDeclineRequests(RejectRequestsDTO rejectRequestsDTO){
+        Set<Request> requests= requestRepository.getAllPendingRequests();
+        for(Request r : requests){
+            for(Vehicle v : r.getVehicles()){
+                if(v.getVehicle_id().equals(rejectRequestsDTO.getVehicle_id())){
+                    if(!compareDates(rejectRequestsDTO.getStart(),rejectRequestsDTO.getEnd(),v.getTime_span().getStartDate(),v.getTime_span().getEndDate())){
+                        r.setStatus(RequestStatus.REJECTED);
+                        requestRepository.save(r);
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println("test");
+    }
 
+    public Boolean compareDates(Date startDate, Date endDate, Date startCompare, Date endCompare){
+        Boolean ret = Boolean.FALSE;
+        if(startDate.after(endCompare)){
+            ret = Boolean.TRUE;
+        }
+        if(endDate.before(startCompare)){
+            ret = Boolean.TRUE;
+        }
+        return ret;
+    }
     // Funkcija koja odbija zahtjev koji nije prihvacen nakon 24h od kreiranja
     public void removeAfter24h(){
         Set<Request> requests = requestRepository.getAllPendingRequests();

@@ -13,6 +13,10 @@ public class ManageCredentialsService {
     @Autowired
     LoginCredentialsRepository credentialsRepository;
 
+    public UserCredentials getCredentials(String username){
+        return credentialsRepository.findByUsername(username);
+    }
+
     public boolean addCredentials(UserCredentials credentials){
 
     	// izmeni da bude promenljiva rola

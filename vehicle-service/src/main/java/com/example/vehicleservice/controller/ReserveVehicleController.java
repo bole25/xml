@@ -2,13 +2,11 @@ package com.example.vehicleservice.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.netflix.ribbon.proxy.annotation.Http;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.vehicleservice.dto.ReservationDTO;
 import com.example.vehicleservice.service.ReserveVehicleService;
@@ -24,9 +22,11 @@ public class ReserveVehicleController {
 	@Autowired
 	private ReserveVehicleService reserveService;
 
+	// Fizicka rezervacije, kada agent vozila hoce da zauzme svoje vozilo
 	@PostMapping()
-	public ResponseEntity<String> reserveVehicle(@RequestBody ReservationDTO reservation){
-		return reserveService.reserveVehicle(reservation);
+	public ResponseEntity<String> reserveVehicle(@RequestBody ReservationDTO reservation, @RequestHeader("Username") String username){
+		reserveService.physicalReservation(reservation,username);
+		return new ResponseEntity<>("", HttpStatus.OK);
 	}
 
 	@PostMapping("/requestService")

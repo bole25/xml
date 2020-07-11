@@ -13,6 +13,7 @@ public class ReservationDTO {
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date end;
+
 	public ReservationDTO(Long id, Date start, Date end) {
 		super();
 		this.id = id;

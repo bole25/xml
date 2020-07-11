@@ -2,6 +2,7 @@ INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `passwor
 INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `password`, `role`, `username`) VALUES ('2', b'1', 'adminsifra', '2', 'admin');
 INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `password`, `role`, `username`) VALUES ('3', b'1', 'rokisifra', '0', 'roki');
 INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `password`, `role`, `username`) VALUES ('4', b'1', 'blanusasifra', '0', 'blanusa');
+INSERT IGNORE INTO `authentication`.`user_credentials` (`id`, `active`, `password`, `role`, `username`) VALUES ('5', b'1', 'veljkosifra', '1', 'veljko');
 
 INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('1', b'1',b'1',b'1','1');
 INSERT IGNORE INTO `authentication`.`user_permission` (`id`, `other_perm`, `request_perm`, `vehicle_perm`, `user_id`) VALUES ('2', b'1',b'1',b'1','3');

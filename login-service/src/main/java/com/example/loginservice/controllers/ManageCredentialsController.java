@@ -50,7 +50,16 @@ public class ManageCredentialsController {
         }
     }
 
-    @GetMapping("havePermission/{perm}")
+    @GetMapping("/getUserType")
+    protected ResponseEntity<Boolean> getUserType( @RequestHeader(value = "Username") String sender){
+    	UserCredentials user = credentialsRepository.findByUsername(sender);
+    	if(user.getRole() != RoleEnum.ROLE_CLIENT) {
+    		return new ResponseEntity<Boolean>(false,HttpStatus.OK);
+    	}
+    	return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+    
+    @GetMapping("/havePermission/{perm}")
     protected ResponseEntity<Boolean> getPermission(@PathVariable String perm,
 
             @RequestHeader(value = "Username") String sender){

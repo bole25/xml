@@ -78,7 +78,8 @@ public class VehicleService {
     }
 
     public ResponseEntity<?> createVehicle(VehicleDTO vehicle, String username){
-        if(vehicleRepository.numberOfVehicles(username) > 2){
+    	Boolean checkUserType = loginClient.getUserType(username);
+        if(checkUserType && vehicleRepository.numberOfVehicles(username) > 2){
             return new ResponseEntity<>("Ne moze se kreirati vise od 3 vozila", HttpStatus.NOT_ACCEPTABLE);
         }
         try {
@@ -183,9 +184,15 @@ public class VehicleService {
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
-		Vehicle best = vehicles.get(0);
+		Vehicle best = null;
 		for(Vehicle v : vehicles) {
-			if(v.getMileage() > best.getMileage() && v.getCompanyUsername().equals(username)) {
+			if (v.getCompanyUsername().equals(username)) {
+				best = v;
+				break;
+			}
+		}
+		for(Vehicle v : vehicles) {
+			if(best != null && v.getMileage() > best.getMileage() && v.getCompanyUsername().equals(username)) {
 				best = v;
 			}
 		}
@@ -201,7 +208,14 @@ public class VehicleService {
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
-		Vehicle best = vehicles.get(0);
+		Vehicle best = null;
+		for(Vehicle v : vehicles) {
+			if (v.getCompanyUsername().equals(username)) {
+				best = v;
+				break;
+			}
+		}
+		
 		for(Vehicle v : vehicles) {
 			if(v.getPrice() > best.getPrice() && v.getCompanyUsername().equals(username)) {
 				best = v;

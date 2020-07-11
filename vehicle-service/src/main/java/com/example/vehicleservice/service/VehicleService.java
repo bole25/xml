@@ -7,6 +7,7 @@ import com.example.vehicleservice.dto.ShowVehicleDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mapping.AccessOptions.GetOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import com.example.vehicleservice.feignclient.LoginClient;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
 import com.google.gson.Gson;
+import com.netflix.ribbon.proxy.annotation.Http;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -76,7 +78,8 @@ public class VehicleService {
     }
 
     public ResponseEntity<?> createVehicle(VehicleDTO vehicle, String username){
-        if(vehicleRepository.numberOfVehicles(username) > 2){
+    	Boolean checkUserType = loginClient.getUserType(username);
+        if(checkUserType && vehicleRepository.numberOfVehicles(username) > 2){
             return new ResponseEntity<>("Ne moze se kreirati vise od 3 vozila", HttpStatus.NOT_ACCEPTABLE);
         }
         try {
@@ -181,9 +184,15 @@ public class VehicleService {
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
-		Vehicle best = vehicles.get(0);
+		Vehicle best = null;
 		for(Vehicle v : vehicles) {
-			if(v.getMileage() > best.getMileage() && v.getCompanyUsername().equals(username)) {
+			if (v.getCompanyUsername().equals(username)) {
+				best = v;
+				break;
+			}
+		}
+		for(Vehicle v : vehicles) {
+			if(best != null && v.getMileage() > best.getMileage() && v.getCompanyUsername().equals(username)) {
 				best = v;
 			}
 		}
@@ -199,7 +208,14 @@ public class VehicleService {
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
-		Vehicle best = vehicles.get(0);
+		Vehicle best = null;
+		for(Vehicle v : vehicles) {
+			if (v.getCompanyUsername().equals(username)) {
+				best = v;
+				break;
+			}
+		}
+		
 		for(Vehicle v : vehicles) {
 			if(v.getPrice() > best.getPrice() && v.getCompanyUsername().equals(username)) {
 				best = v;
@@ -210,5 +226,17 @@ public class VehicleService {
 		vDTO.setBrand(best.getBrand());
 		vDTO.setModel(best.getModel());
 		return new ResponseEntity<VehicleDTO>(vDTO,HttpStatus.OK);
+	}
+
+	public ResponseEntity<Boolean> updateKm(Long id, Integer km) {
+		Vehicle vehicle = vehicleRepository.getOne(id);
+		if(vehicle == null) {
+			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+		}
+		int kms = vehicle.getMileage();
+		kms += km;
+		vehicle.setMileage(kms);
+		vehicle = vehicleRepository.save(vehicle);
+		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
 }

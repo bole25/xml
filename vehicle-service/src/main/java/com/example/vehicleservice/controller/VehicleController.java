@@ -100,4 +100,9 @@ public class VehicleController {
     public ResponseEntity<VehicleDTO> getMostPriceCar(@RequestHeader(value = "Username") String username){
     	return vehicleService.getMostPriceCar(username);
     }
+    
+    @GetMapping("/updateKm/{id}/{km}")
+    public ResponseEntity<Boolean> updateKm(@PathVariable("id") Long id,@PathVariable("km") Integer km){
+    	return vehicleService.updateKm(id,km);
+    }
 }

@@ -7,6 +7,7 @@ import com.example.vehicleservice.dto.ShowVehicleDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mapping.AccessOptions.GetOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import com.example.vehicleservice.feignclient.LoginClient;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.repository.VehicleRepository;
 import com.google.gson.Gson;
+import com.netflix.ribbon.proxy.annotation.Http;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -210,5 +212,17 @@ public class VehicleService {
 		vDTO.setBrand(best.getBrand());
 		vDTO.setModel(best.getModel());
 		return new ResponseEntity<VehicleDTO>(vDTO,HttpStatus.OK);
+	}
+
+	public ResponseEntity<Boolean> updateKm(Long id, Integer km) {
+		Vehicle vehicle = vehicleRepository.getOne(id);
+		if(vehicle == null) {
+			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+		}
+		int kms = vehicle.getMileage();
+		kms += km;
+		vehicle.setMileage(kms);
+		vehicle = vehicleRepository.save(vehicle);
+		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
 }

@@ -1,0 +1,87 @@
+11-07-2020 19:33:37.046 WARN  [task-1] o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : Access denied for user 'root'@'localhost' (using password: YES)
+11-07-2020 19:33:37.051 WARN  [main] o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartRepository' defined in com.example.rentservice.repository.CartRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+11-07-2020 19:33:37.053 WARN  [main] o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createRequestController': Unsatisfied dependency expressed through field 'requestsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createRequestsService': Unsatisfied dependency expressed through field 'requestClient'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.example.rentservice.feignClient.RequestClient': FactoryBean threw exception on object creation; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartRepository' defined in com.example.rentservice.repository.CartRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+11-07-2020 19:33:37.055 WARN  [main] o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+11-07-2020 19:33:37.102 WARN  [main] o.s.boot.SpringApplication - Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'applicationAvailability' defined in class path resource [org/springframework/boot/autoconfigure/availability/ApplicationAvailabilityAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.example.rentservice.CartServiceApplication.main(CartServiceApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:276)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 40 common frames omitted
+11-07-2020 19:34:13.202 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:34:13.211 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:44:49.271 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:44:49.278 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:50:19.312 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:50:19.317 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:53:25.295 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 19:53:25.303 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:01:53.593 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:01:53.600 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:02:57.200 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:02:57.206 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:04:43.390 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:04:43.397 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:09:09.014 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:09:09.021 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:38:19.322 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:38:19.328 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:42:51.124 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:42:51.132 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:50:11.229 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 20:50:11.233 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 21:09:39.573 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 21:09:39.578 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 21:12:30.468 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11-07-2020 21:12:30.473 WARN  [main] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.

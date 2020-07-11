@@ -1,0 +1,529 @@
+11-07-2020 18:18:50.521 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f5fab54c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:18:50.792 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 18:18:51.982 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 18:18:52.068 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74ms. Found 1 JPA repository interfaces.
+11-07-2020 18:18:52.295 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=90bf0091-de56-37cd-a5b2-063c14297d66
+11-07-2020 18:18:52.378 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:18:52.387 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$670deef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:18:52.388 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7e78774e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:18:52.417 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 18:18:52.491 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f5fab54c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:18:52.731 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 18:18:52.751 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:18:52.752 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 18:18:52.752 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 18:18:53.084 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 18:18:53.091 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 18:18:53.092 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2268 ms
+11-07-2020 18:18:53.305 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:18:53.482 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 18:18:53.554 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 18:18:53.675 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:18:53.713 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 18:18:53.827 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 18:18:55.018 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 18:18:55.680 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 18:18:56.694 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:18:56.694 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:18:56.696 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11-07-2020 18:18:56.711 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+11-07-2020 18:19:29.661 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48ac77b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:19:30.058 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 18:19:31.343 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 18:19:31.428 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 1 JPA repository interfaces.
+11-07-2020 18:19:31.682 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=90bf0091-de56-37cd-a5b2-063c14297d66
+11-07-2020 18:19:31.761 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:19:31.770 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$5922a158] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:19:31.771 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$d12a39b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:19:31.803 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 18:19:31.887 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48ac77b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:19:32.199 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 18:19:32.208 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:19:32.208 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 18:19:32.209 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 18:19:32.534 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 18:19:32.540 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 18:19:32.540 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2455 ms
+11-07-2020 18:19:32.750 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:19:32.903 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 18:19:33.087 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 18:19:33.183 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:19:33.234 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 18:19:33.383 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 18:19:33.525 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 18:19:33.538 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 18:19:34.372 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 18:19:34.380 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:19:34.639 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:19:34.831 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:19:34.838 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:19:35.424 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:19:35.449 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 18:19:35.452 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:19:35.453 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:19:35.465 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 7.361 seconds (JVM running for 8.68)
+11-07-2020 18:25:40.124 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 18:25:40.125 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 18:25:40.133 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+11-07-2020 18:25:40.853 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:25:40.897 INFO  [http-nio-8083-exec-1] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 18:25:40.907 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 18:25:40.930 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:25:40.932 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@56cb49a
+11-07-2020 18:25:40.958 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:25:40.958 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:25:41.912 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:29:18.385 INFO  [Thread-298] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 18:29:18.432 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:29:18.435 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:29:18.435 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 18:29:18.442 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 18:29:25.893 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$16c76e4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:29:26.402 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 18:29:27.713 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 18:29:27.816 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93ms. Found 1 JPA repository interfaces.
+11-07-2020 18:29:28.073 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=90bf0091-de56-37cd-a5b2-063c14297d66
+11-07-2020 18:29:28.180 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:29:28.191 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$273d97ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:29:28.192 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9f45304c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:29:28.223 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 18:29:28.306 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$16c76e4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:29:28.571 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 18:29:28.583 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:29:28.584 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 18:29:28.585 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 18:29:28.920 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 18:29:28.925 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 18:29:28.925 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2498 ms
+11-07-2020 18:29:29.151 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:29:29.238 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 18:29:29.396 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 18:29:29.486 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:29:29.534 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 18:29:29.636 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 18:29:29.760 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 18:29:29.774 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 18:29:30.504 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 18:29:30.512 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:29:30.750 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:29:30.973 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:29:30.977 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:29:31.535 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:29:31.556 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 18:29:31.558 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:29:31.559 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:29:31.568 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 7.302 seconds (JVM running for 8.596)
+11-07-2020 18:38:53.954 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 18:38:53.955 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 18:38:53.965 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+11-07-2020 18:38:54.679 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:38:54.719 INFO  [http-nio-8083-exec-1] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 18:38:54.729 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 18:38:54.749 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:38:54.751 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@860679a
+11-07-2020 18:38:54.778 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:38:54.778 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:38:55.734 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:55:43.371 INFO  [Thread-297] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 18:55:43.414 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:55:43.416 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:55:43.416 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 18:55:43.423 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 18:55:52.132 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$67fb2b5a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:55:52.355 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 18:55:53.702 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 18:55:53.797 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85ms. Found 1 JPA repository interfaces.
+11-07-2020 18:55:54.030 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=90bf0091-de56-37cd-a5b2-063c14297d66
+11-07-2020 18:55:54.128 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:55:54.140 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$787154fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:55:54.141 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f078ed5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:55:54.176 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 18:55:54.268 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$67fb2b5a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 18:55:54.568 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 18:55:54.581 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:55:54.582 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 18:55:54.583 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 18:55:54.885 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 18:55:54.891 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 18:55:54.892 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2460 ms
+11-07-2020 18:55:55.144 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 18:55:55.316 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 18:55:55.408 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 18:55:55.514 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:55:55.627 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 18:55:55.758 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 18:55:55.916 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 18:55:55.934 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 18:55:56.881 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 18:55:56.893 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 18:55:57.189 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:55:57.412 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:55:57.418 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 18:55:58.090 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 18:55:58.116 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 18:55:58.120 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:55:58.121 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:55:58.132 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 8.091 seconds (JVM running for 9.625)
+11-07-2020 18:56:10.840 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 18:56:10.841 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 18:56:10.852 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+11-07-2020 18:56:17.852 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:56:18.135 INFO  [http-nio-8083-exec-1] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 18:56:18.195 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 18:56:18.358 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 18:56:18.375 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@3bc24fb6
+11-07-2020 18:56:18.717 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 18:56:18.718 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 18:56:20.432 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 19:32:08.214 INFO  [Thread-298] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 19:32:08.266 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 19:32:08.268 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 19:32:08.269 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 19:32:08.275 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 19:43:21.997 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bd2aa01c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 19:43:22.367 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 19:43:23.197 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 19:43:23.274 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71ms. Found 1 JPA repository interfaces.
+11-07-2020 19:43:23.488 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=69d76398-a15c-3ab8-bcb0-749ec38cc6a0
+11-07-2020 19:43:23.565 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 19:43:23.575 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$cda0c9bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 19:43:23.576 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$45a8621e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 19:43:23.612 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 19:43:23.705 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bd2aa01c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 19:43:23.939 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 19:43:23.950 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 19:43:23.951 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 19:43:23.951 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 19:43:24.259 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 19:43:24.263 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 19:43:24.264 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1874 ms
+11-07-2020 19:43:24.460 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 19:43:24.668 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 19:43:24.720 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 19:43:24.842 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 19:43:24.960 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 19:43:25.028 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 19:43:25.115 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 19:43:25.129 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 19:43:25.857 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 19:43:25.865 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 19:43:26.137 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 19:43:26.340 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 19:43:26.346 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 19:43:27.210 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 19:43:27.250 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 19:43:27.252 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 19:43:27.253 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 19:43:27.263 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 6.912 seconds (JVM running for 8.037)
+11-07-2020 19:45:46.490 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 19:45:46.491 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 19:45:46.499 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+11-07-2020 20:37:14.440 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:37:14.443 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:37:14.444 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 20:37:14.448 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 20:37:20.670 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c1f14d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:37:20.987 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 20:37:22.135 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 20:37:22.248 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103ms. Found 1 JPA repository interfaces.
+11-07-2020 20:37:22.501 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=4c793dc5-02f8-3e3b-97cb-40532506daf3
+11-07-2020 20:37:22.589 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:37:22.601 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$11381af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:37:22.602 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$893fb34f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:37:22.634 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 20:37:22.766 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c1f14d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:37:23.062 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 20:37:23.073 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:37:23.074 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 20:37:23.075 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 20:37:23.357 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 20:37:23.364 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 20:37:23.365 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2330 ms
+11-07-2020 20:37:23.558 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:37:23.729 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 20:37:23.789 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 20:37:23.879 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:37:23.915 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 20:37:24.021 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 20:37:24.144 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 20:37:24.156 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 20:37:24.927 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 20:37:24.936 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:37:25.161 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:37:25.351 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:37:25.355 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:37:26.340 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:37:26.360 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 20:37:26.362 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:37:26.363 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:37:26.372 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 7.294 seconds (JVM running for 8.334)
+11-07-2020 20:40:38.382 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 20:40:38.382 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 20:40:38.390 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+11-07-2020 20:49:33.437 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:49:33.439 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:49:33.440 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 20:49:33.448 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 20:49:40.466 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:49:40.919 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 20:49:42.001 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 20:49:42.085 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 1 JPA repository interfaces.
+11-07-2020 20:49:42.287 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=b287640c-f065-3bc2-bdb1-e66e6bef128f
+11-07-2020 20:49:42.361 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:49:42.370 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$5959e6c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:49:42.371 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$d1617f25] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:49:42.395 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 20:49:42.472 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:49:42.699 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 20:49:42.712 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:49:42.713 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 20:49:42.713 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 20:49:43.023 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 20:49:43.028 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 20:49:43.029 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2059 ms
+11-07-2020 20:49:43.222 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:49:43.404 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 20:49:43.467 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 20:49:43.558 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:49:43.606 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 20:49:43.695 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 20:49:43.827 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 20:49:43.839 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 20:49:44.547 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 20:49:44.557 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:49:44.801 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:49:45.210 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:49:45.215 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:49:45.962 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:49:46.002 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 20:49:46.004 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:49:46.005 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:49:46.014 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 7.127 seconds (JVM running for 8.188)
+11-07-2020 20:50:31.624 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 20:50:31.625 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 20:50:31.631 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+11-07-2020 20:55:39.623 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:55:39.625 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:55:39.626 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 20:55:39.633 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 20:55:47.653 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$21399396] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:55:48.011 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 20:55:51.636 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 20:55:51.753 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102ms. Found 1 JPA repository interfaces.
+11-07-2020 20:55:52.058 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=b287640c-f065-3bc2-bdb1-e66e6bef128f
+11-07-2020 20:55:52.239 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:55:52.256 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$31afbd39] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:55:52.257 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a9b75598] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:55:52.293 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 20:55:52.413 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$21399396] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:55:52.747 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 20:55:52.758 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:55:52.759 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 20:55:52.761 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 20:55:53.311 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 20:55:53.323 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 20:55:53.326 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5243 ms
+11-07-2020 20:55:53.671 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:55:54.013 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 20:55:54.178 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 20:55:54.302 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:55:54.406 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 20:55:54.593 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 20:55:54.821 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 20:55:54.843 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 20:55:56.623 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 20:55:56.657 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:55:57.457 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:55:58.619 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:55:58.635 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:56:00.552 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:56:00.605 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 20:56:00.610 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:56:00.611 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:56:00.632 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 14.366 seconds (JVM running for 15.57)
+11-07-2020 20:56:42.664 INFO  [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 20:56:42.664 INFO  [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 20:56:42.674 INFO  [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+11-07-2020 20:56:43.010 INFO  [http-nio-8083-exec-2] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 20:56:43.047 INFO  [http-nio-8083-exec-2] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 20:56:43.055 INFO  [http-nio-8083-exec-2] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 20:56:43.085 INFO  [http-nio-8083-exec-2] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 20:56:43.088 INFO  [http-nio-8083-exec-2] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@585fd960
+11-07-2020 20:56:43.127 INFO  [http-nio-8083-exec-2] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:56:43.127 INFO  [http-nio-8083-exec-2] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:56:44.060 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 20:58:04.189 INFO  [Thread-318] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 20:58:04.236 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:58:04.239 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:58:04.239 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 20:58:04.247 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 20:58:09.691 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$88923d02] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:58:10.081 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 20:58:11.675 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 20:58:11.755 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72ms. Found 1 JPA repository interfaces.
+11-07-2020 20:58:12.002 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=b287640c-f065-3bc2-bdb1-e66e6bef128f
+11-07-2020 20:58:12.103 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:58:12.118 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$990866a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:58:12.119 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$110fff04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:58:12.159 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 20:58:12.258 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$88923d02] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 20:58:12.512 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 20:58:12.521 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:58:12.522 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 20:58:12.523 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 20:58:12.811 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 20:58:12.816 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 20:58:12.817 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2672 ms
+11-07-2020 20:58:13.023 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 20:58:13.204 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 20:58:13.271 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 20:58:13.371 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:58:13.401 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 20:58:13.521 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 20:58:13.681 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 20:58:13.700 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 20:58:14.728 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 20:58:14.737 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 20:58:15.014 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:58:15.529 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:58:15.537 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 20:58:16.667 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 20:58:16.702 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 20:58:16.706 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:58:16.707 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:58:16.718 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 8.539 seconds (JVM running for 9.662)
+11-07-2020 20:59:11.538 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 20:59:11.538 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 20:59:11.546 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+11-07-2020 20:59:11.904 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 20:59:11.941 INFO  [http-nio-8083-exec-1] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 20:59:11.948 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 20:59:11.968 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 20:59:11.971 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@3c8a62a5
+11-07-2020 20:59:12.003 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 20:59:12.003 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 20:59:12.267 INFO  [http-nio-8083-exec-1] o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+11-07-2020 20:59:12.313 INFO  [http-nio-8083-exec-1] o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#13c8ac77:0/SimpleConnection@115df64e [delegate=amqp://guest@127.0.0.1:5672/, localPort= 37432]
+11-07-2020 20:59:12.953 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:08:05.551 INFO  [Thread-308] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 21:08:05.717 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 21:08:05.725 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 21:08:05.727 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 21:08:05.775 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 21:08:16.155 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$80d65c16] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:08:16.552 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 21:08:17.946 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 21:08:18.032 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 1 JPA repository interfaces.
+11-07-2020 21:08:18.276 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=b287640c-f065-3bc2-bdb1-e66e6bef128f
+11-07-2020 21:08:18.387 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:08:18.397 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$914c85b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:08:18.398 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9541e18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:08:18.433 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 21:08:18.547 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$80d65c16] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:08:18.775 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 21:08:18.784 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 21:08:18.784 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 21:08:18.785 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 21:08:19.077 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 21:08:19.083 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 21:08:19.083 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2483 ms
+11-07-2020 21:08:19.290 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 21:08:19.512 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 21:08:19.574 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 21:08:19.670 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:08:19.710 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 21:08:19.803 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 21:08:19.920 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 21:08:19.933 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 21:08:20.784 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 21:08:20.792 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 21:08:21.051 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:08:21.482 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 21:08:21.486 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 21:08:22.650 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 21:08:22.690 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 21:08:22.694 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:08:22.695 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:08:22.708 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 8.464 seconds (JVM running for 10.168)
+11-07-2020 21:08:51.775 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 21:08:51.776 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 21:08:51.787 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+11-07-2020 21:08:52.131 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:08:52.175 INFO  [http-nio-8083-exec-1] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 21:08:52.186 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 21:08:52.206 INFO  [http-nio-8083-exec-1] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:08:52.208 INFO  [http-nio-8083-exec-1] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@709b770d
+11-07-2020 21:08:52.237 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:08:52.238 INFO  [http-nio-8083-exec-1] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:08:52.535 INFO  [http-nio-8083-exec-1] o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+11-07-2020 21:08:52.573 INFO  [http-nio-8083-exec-1] o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#6413d7e7:0/SimpleConnection@2900e162 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 38038]
+11-07-2020 21:08:53.189 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:14:21.147 INFO  [Thread-310] c.n.l.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+11-07-2020 21:14:21.209 INFO  [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 21:14:21.212 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11-07-2020 21:14:21.213 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11-07-2020 21:14:21.224 INFO  [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11-07-2020 21:29:36.973 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c00b631a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:29:37.366 INFO  [main] c.e.v.VehicleServiceApplication - No active profile set, falling back to default profiles: default
+11-07-2020 21:29:38.193 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+11-07-2020 21:29:38.270 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66ms. Found 1 JPA repository interfaces.
+11-07-2020 21:29:38.508 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=b287640c-f065-3bc2-bdb1-e66e6bef128f
+11-07-2020 21:29:38.589 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.example.vehicleservice.feignclient.LoginClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:29:38.603 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.example.vehicleservice.config.WebServiceConfig$$EnhancerBySpringCGLIB$$d0818cbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:29:38.604 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4889251c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:29:38.634 INFO  [main] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+11-07-2020 21:29:38.755 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c00b631a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11-07-2020 21:29:38.974 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+11-07-2020 21:29:38.983 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+11-07-2020 21:29:38.984 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+11-07-2020 21:29:38.984 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+11-07-2020 21:29:39.260 INFO  [main] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-07-2020 21:29:39.267 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11-07-2020 21:29:39.267 INFO  [main] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1880 ms
+11-07-2020 21:29:39.441 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11-07-2020 21:29:39.619 INFO  [task-1] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-07-2020 21:29:39.695 INFO  [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.15.Final
+11-07-2020 21:29:39.817 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:29:39.832 INFO  [task-1] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-07-2020 21:29:40.003 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11-07-2020 21:29:40.200 INFO  [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11-07-2020 21:29:40.225 INFO  [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+11-07-2020 21:29:41.490 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-07-2020 21:29:41.500 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-07-2020 21:29:41.889 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:29:42.348 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 21:29:42.352 INFO  [main] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+11-07-2020 21:29:43.894 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+11-07-2020 21:29:43.969 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+11-07-2020 21:29:43.973 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:29:43.974 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:29:43.992 INFO  [main] c.e.v.VehicleServiceApplication - Started VehicleServiceApplication in 8.584 seconds (JVM running for 9.529)
+11-07-2020 21:30:32.984 INFO  [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-07-2020 21:30:32.984 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11-07-2020 21:30:32.993 INFO  [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+11-07-2020 21:33:26.281 INFO  [http-nio-8083-exec-4] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:33:26.314 INFO  [http-nio-8083-exec-4] c.n.loadbalancer.BaseLoadBalancer - Client: login-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+11-07-2020 21:33:26.322 INFO  [http-nio-8083-exec-4] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+11-07-2020 21:33:26.340 INFO  [http-nio-8083-exec-4] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:33:26.342 INFO  [http-nio-8083-exec-4] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client login-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=login-service,current list of Servers=[localhost:8089],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8089;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@7cc46bb2
+11-07-2020 21:33:26.367 INFO  [http-nio-8083-exec-4] o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+11-07-2020 21:33:26.367 INFO  [http-nio-8083-exec-4] o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+11-07-2020 21:33:27.326 INFO  [PollingServerListUpdater-0] c.n.config.ChainedDynamicProperty - Flipping property: login-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+11-07-2020 21:35:50.975 INFO  [http-nio-8083-exec-6] o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+11-07-2020 21:35:51.012 INFO  [http-nio-8083-exec-6] o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3ff54f3d:0/SimpleConnection@15e71bd0 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 39296]

@@ -18,6 +18,9 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
     @Query(value = "SELECT * FROM requests.request WHERE owner_username = ?1 AND status = 0", nativeQuery = true)
     Set<Request> getOwnersPending(String username);
 
+    @Query("SELECT u FROM Request u WHERE u.status = 0")
+    Set<Request> getVehiclesPending();
+
     @Modifying
     @Query(value = "UPDATE requests.request SET status = '1' WHERE (id = ?1)", nativeQuery = true)
     void approveRequest(Long id);

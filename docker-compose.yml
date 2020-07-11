@@ -108,12 +108,20 @@ services:
                  image: gps-service-img
                  container_name: gpsServiceContainer
                  hostname: gps-service
+                 environment:
+                         DATABASE_PASSWORD: password
+                         DATABASE_DOMAIN: database
+                         DATABASE_SCHEME: gps
+                         RABBITMQ_NETWORK: rabbitmq
                  networks:
                          service-discovery-network:
                                  aliases:
                                          - gps-service
                  volumes:
                         - $HOME/.m2:/root/.m2
+                 depends_on:
+                        - database
+                        - rabbitmq
        
         register-service:
                  build: ./register-service
@@ -145,7 +153,7 @@ services:
                         - $HOME/.m2:/root/.m2
                  depends_on:
                         - database
-
+                        - rabbitmq
       
         report-service:
                  build: ./report-service

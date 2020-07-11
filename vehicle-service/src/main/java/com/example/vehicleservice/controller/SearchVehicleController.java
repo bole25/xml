@@ -3,7 +3,6 @@ package com.example.vehicleservice.controller;
 import com.example.vehicleservice.dto.SearchDTO;
 import com.example.vehicleservice.model.Vehicle;
 import com.example.vehicleservice.service.SearchVehicleService;
-import javafx.util.converter.LocalDateStringConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

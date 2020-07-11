@@ -71,16 +71,16 @@ public class CreateRequestsService {
             }
         }
 
-        Gson gson = new Gson();
+        /*Gson gson = new Gson();
         String encodedJSON = gson.toJson(requests);
-        requestClient.update(encodedJSON, username);
+        requestClient.update(encodedJSON, username);*/
 
-        /*try {
+        try {
             queueProducer.produce(requests);
         }catch (Exception e){
             System.out.println("Uhvatio gresku pri rabbitmq-u");
             e.printStackTrace();
-        }*/
+        }
         cart.setItems(new HashSet<>());
         cartRepository.save(cart);
 

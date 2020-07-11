@@ -176,14 +176,14 @@ public class VehicleService {
 		return new ResponseEntity<String>("",HttpStatus.OK);
 	}
 
-	public ResponseEntity<VehicleDTO> getMostKmCar() {
+	public ResponseEntity<VehicleDTO> getMostKmCar(String username) {
 		List<Vehicle> vehicles = vehicleRepository.findAll();
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
 		Vehicle best = vehicles.get(0);
 		for(Vehicle v : vehicles) {
-			if(v.getMileage() > best.getMileage()) {
+			if(v.getMileage() > best.getMileage() && v.getCompanyUsername().equals(username)) {
 				best = v;
 			}
 		}
@@ -194,14 +194,14 @@ public class VehicleService {
 		return new ResponseEntity<VehicleDTO>(vDTO,HttpStatus.OK);
 	}
 
-	public ResponseEntity<VehicleDTO> getMostPriceCar() {
+	public ResponseEntity<VehicleDTO> getMostPriceCar(String username) {
 		List<Vehicle> vehicles = vehicleRepository.findAll();
 		if(vehicles == null) {
 			return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
 		}
 		Vehicle best = vehicles.get(0);
 		for(Vehicle v : vehicles) {
-			if(v.getPrice() > best.getPrice()) {
+			if(v.getPrice() > best.getPrice() && v.getCompanyUsername().equals(username)) {
 				best = v;
 			}
 		}

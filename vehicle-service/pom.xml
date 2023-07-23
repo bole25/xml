@@ -130,7 +130,7 @@
 		<dependency>
 			<groupId>org.owasp</groupId>
 			<artifactId>dependency-check-maven</artifactId>
-			<version>2.1.1</version>
+			<version>3.2.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -184,7 +184,7 @@
 			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
-				<version>5.3.2</version>
+				<version>3.2.0</version>
 				<executions>
 					<execution>
 						<goals>
